@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-20f9543c-4b48-4898-9c80-1e2f739e756c/styles.css">
+<script src="_ds/classical-20f9543c-4b48-4898-9c80-1e2f739e756c/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@400;500&family=Kristi&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0F150E;color:#F5EDE5;-webkit-font-smoothing:antialiased}
+a{color:#B7A17B}a:hover{color:#F5EDE5}
+textarea::placeholder,input::placeholder{color:rgba(245,237,229,.45)}
+button:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid #B7A17B;outline-offset:2px}
+@media print{body{background:#F5EDE5!important}[data-app]{display:none!important}[data-print]{display:block!important}}
+</style>
+</helmet>
+<div data-app="1" style="min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:32px 16px;box-sizing:border-box">
+<div style="position:relative;width:390px;height:844px;border-radius:46px;overflow:hidden;background:radial-gradient(70% 45% at 85% 12%,rgba(139,116,88,.28),transparent 70%),radial-gradient(60% 40% at 10% 55%,rgba(48,56,38,.7),transparent 70%),radial-gradient(120% 70% at 50% 110%,#0E130D,transparent 70%),#1B2419;box-shadow:0 0 0 10px #0A0E09,0 30px 80px rgba(0,0,0,.6)">
+<div style="{{ frameFilter }}">
+
+<div ref="{{ scroller }}" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding-bottom:96px;box-sizing:border-box;scrollbar-width:none">
+
+<sc-if value="{{ isThreshold }}" hint-placeholder-val="{{ true }}">
+  <sc-if value="{{ showHero }}" hint-placeholder-val="{{ true }}">
+    <div style="position:relative;height:400px">
+    <div style="position:absolute;top:100px;left:44px;right:44px;bottom:0;border-radius:999px 999px 0 0;border:1px solid rgba(183,161,123,.75);padding:6px;box-sizing:border-box">
+      <div style="position:relative;height:100%;border-radius:999px 999px 0 0;overflow:hidden;background:radial-gradient(90% 70% at 35% 25%,#9C8466,#7A6449 55%,#4A3D2E);color:#F5EDE5">
+        <image-slot id="art-threshold" shape="rect" placeholder="Drop your painting"></image-slot>
+        <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(27,36,25,0) 60%,rgba(27,36,25,.75) 100%)"></div>
+      </div>
+    </div>
+    </div>
+  </sc-if>
+  <div style="{{ welcomeWrap }}">
+    <h1 style="margin:0;font:300 96px/0.9 'Cormorant Garamond',serif;letter-spacing:.1em;color:#FFF9F2">WURA</h1>
+    <div style="font:400 40px/1 'Kristi',cursive;color:#F5EDE5;transform:rotate(-4deg);margin:6px 0 0 54px">The Art of Becoming</div>
+    <p style="margin:26px 0 0;font:italic 300 22px/1.3 'Cormorant Garamond',serif;color:#EBCFD0">Welcome back to yourself.</p>
+  </div>
+
+  <sc-if value="{{ notLow }}" hint-placeholder-val="{{ true }}">
+    <div style="margin:36px 24px 0;border-top:1px solid rgba(245,237,229,.18);padding-top:22px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <span style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">Who is present</span>
+        <span style="font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.7)">tap to brighten</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;margin-top:18px">
+        <sc-for list="{{ lights }}" as="l" hint-placeholder-count="2">
+          <button onClick="{{ l.onClick }}" style="background:none;border:none;border-left:{{ l.rule }};padding:8px 0 8px 18px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;cursor:pointer;color:#F5EDE5;text-align:left">
+            <span style="position:relative;width:84px;height:84px;display:block"><sc-for list="{{ l.rings }}" as="r" hint-placeholder-count="3"><span style="{{ r }}"></span></sc-for><span style="{{ l.orb }}"></span></span>
+            <span style="font:400 30px/1 'Cormorant Garamond',serif">{{ l.name }}</span>
+            <span style="font:italic 300 17px/1.1 'Cormorant Garamond',serif;color:rgba(245,237,229,.8);margin-top:-8px">{{ l.sub }}</span>
+            <span style="display:flex;gap:4px;align-items:center">
+              <sc-for list="{{ l.ticks }}" as="t" hint-placeholder-count="3"><span style="{{ t }}"></span></sc-for>
+              <span style="font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.75);margin-left:6px">{{ l.level }}</span>
+            </span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="margin:36px 24px 0;border-top:1px solid rgba(245,237,229,.18);padding-top:22px">
+    <span style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">Check in</span>
+    <h2 style="margin:12px 0 18px;font:300 36px/1.05 'Cormorant Garamond',serif;color:#FFF9F2">What is moving<br>in you?</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ feelingChips }}" as="c" hint-placeholder-count="9"><button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+    </div>
+    <sc-if value="{{ hasFeelings }}" hint-placeholder-val="{{ false }}">
+      <h3 style="margin:30px 0 14px;font:italic 300 24px/1.1 'Cormorant Garamond',serif;color:#F5EDE5">How strong is it?</h3>
+      <div style="display:flex;justify-content:space-between">
+        <sc-for list="{{ intensityDots }}" as="d" hint-placeholder-count="6"><button onClick="{{ d.onClick }}" style="{{ d.style }}">{{ d.label }}</button></sc-for>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.7)"><span>still</span><span>roaring</span></div>
+      <p style="margin:14px 0 0;font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.65)">Kept in today’s page.</p>
+    </sc-if>
+    <sc-if value="{{ showChoices }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:30px;border-top:1px solid rgba(245,237,229,.18)">
+        <button onClick="{{ startDecoder }}" style="width:100%;min-height:72px;background:none;border:none;border-bottom:1px solid rgba(245,237,229,.18);display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#FFF9F2;padding:0">
+          <span style="font:400 26px 'Cormorant Garamond',serif">Understand this feeling</span><span style="font:300 26px 'Cormorant Garamond',serif;color:#B7A17B">→</span>
+        </button>
+        <button onClick="{{ goRose }}" style="width:100%;min-height:72px;background:none;border:none;border-bottom:1px solid rgba(245,237,229,.18);display:flex;justify-content:space-between;align-items:center;cursor:pointer;color:#FFF9F2;padding:0">
+          <span style="font:italic 400 26px 'Cormorant Garamond',serif;color:#EBCFD0">Soothe me now</span><span style="font:300 26px 'Cormorant Garamond',serif;color:#C58F9C">→</span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="margin:40px 24px 0">
+    <sc-if value="{{ notReturned }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ markReturned }}" style="width:100%;height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">I returned today</button>
+    </sc-if>
+    <sc-if value="{{ hasReturned }}" hint-placeholder-val="{{ false }}">
+      <div style="text-align:center;padding:12px 0">
+        <div style="font:400 38px/1 'Kristi',cursive;color:#B7A17B">I am the return.</div>
+        <p style="margin:10px 0 0;font:italic 300 19px/1.3 'Cormorant Garamond',serif;color:#F5EDE5">You came back today. That is enough.</p>
+        <button onClick="{{ unmarkReturned }}" style="margin-top:8px;background:none;border:none;min-height:44px;font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.6);cursor:pointer">undo</button>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isGarden }}" hint-placeholder-val="{{ false }}">
+  <div style="position:relative;height:400px">
+    <div style="position:absolute;top:100px;right:24px;width:220px;bottom:0;border-radius:999px 999px 0 0;border:1px solid rgba(183,161,123,.75);padding:6px;box-sizing:border-box">
+      <div style="position:relative;height:100%;border-radius:999px 999px 0 0;overflow:hidden;background:radial-gradient(90% 70% at 35% 25%,#9C8466,#7A6449 55%,#4A3D2E);color:#F5EDE5">
+        <image-slot id="art-garden" shape="rect" placeholder="Drop your painting"></image-slot>
+        <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(27,36,25,0) 60%,rgba(27,36,25,.75) 100%)"></div>
+      </div>
+    </div>
+    <div style="position:absolute;pointer-events:none;top:0;bottom:0;left:62px;border-left:1px solid rgba(245,237,229,.22)"></div>
+    <div style="position:absolute;pointer-events:none;left:24px;top:118px;font:400 13px 'DM Sans',sans-serif;color:#B7A17B;writing-mode:vertical-rl;transform:rotate(180deg);letter-spacing:.14em">II</div>
+    <div style="position:absolute;pointer-events:none;left:80px;bottom:30px">
+      <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B;margin-bottom:10px">/ DBT</div>
+      <h1 style="margin:0;font:300 54px/.92 'Cormorant Garamond',serif;letter-spacing:.02em;text-transform:uppercase;color:#FFF9F2">Inner<br>Garden</h1><div style="font:400 30px/1 'Kristi',cursive;color:#EBCFD0;margin-top:10px;transform:rotate(-4deg)">the art of tending</div>
+    </div>
+  </div>
+  <p style="margin:18px 24px 0 80px;font:italic 300 19px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">Two paths. One skill at a time.</p>
+
+  <div style="margin:34px 24px 0;border-top:1px solid rgba(245,237,229,.18)">
+    <button onClick="{{ startDecoderFresh }}" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(245,237,229,.18);padding:22px 0;display:grid;grid-template-columns:56px 1fr auto;align-items:start;text-align:left;cursor:pointer;color:#FFF9F2">
+      <span style="font:300 22px 'Cormorant Garamond',serif;color:#B7A17B">/01</span>
+      <span><span style="display:block;font:400 30px/1.05 'Cormorant Garamond',serif">Understanding Myself</span><span style="display:block;margin-top:8px;font:400 14px/1.4 'DM Sans',sans-serif;color:rgba(245,237,229,.78)">The Emotion Decoder. Six questions, one per page.</span></span>
+      <span style="font:300 26px 'Cormorant Garamond',serif;color:#B7A17B">→</span>
+    </button>
+    <div style="padding:22px 0 6px;display:grid;grid-template-columns:56px 1fr">
+      <span style="font:300 22px 'Cormorant Garamond',serif;color:#C58F9C">/02</span>
+      <span style="font:400 30px/1.05 'Cormorant Garamond',serif;color:#FFF9F2">Holding Myself Around Others</span>
+    </div>
+    <div style="margin-left:56px">
+      <sc-for list="{{ othersSkills }}" as="k" hint-placeholder-count="3">
+        <button onClick="{{ k.onClick }}" style="width:100%;min-height:64px;background:none;border:none;border-bottom:1px solid rgba(245,237,229,.12);display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;cursor:pointer;color:#F5EDE5;padding:10px 0">
+          <span><span style="display:block;font:500 15px 'DM Sans',sans-serif;letter-spacing:.04em">{{ k.name }}</span><span style="display:block;margin-top:3px;font:italic 300 17px 'Cormorant Garamond',serif;color:rgba(245,237,229,.78)">{{ k.line }}</span></span>
+          <span style="font:300 22px 'Cormorant Garamond',serif;color:#C58F9C">→</span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <sc-if value="{{ hasKept }}" hint-placeholder-val="{{ false }}">
+    <div style="margin:40px 24px 0">
+      <span style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">Kept close</span>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+        <sc-for list="{{ keptList }}" as="k" hint-placeholder-count="2"><button onClick="{{ k.onClick }}" style="min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(183,161,123,.6);background:transparent;color:#FFF9F2;font:400 15px 'DM Sans',sans-serif;cursor:pointer">{{ k.name }}</button></sc-for>
+      </div>
+    </div>
+  </sc-if>
+</sc-if>
+
+<sc-if value="{{ isDecoder }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <button onClick="{{ decBack }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← {{ decBackLabel }}</button>
+      <span style="font:300 20px 'Cormorant Garamond',serif;color:#B7A17B">{{ decNum }} <span style="color:rgba(245,237,229,.55)">— /06</span></span>
+    </div>
+    <div style="display:flex;gap:4px;margin-top:10px">
+      <sc-for list="{{ decProgress }}" as="p" hint-placeholder-count="6"><span style="{{ p }}"></span></sc-for>
+    </div>
+    <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B;margin-top:44px">Emotion Decoder</div>
+    <h2 style="margin:14px 0 0;font:300 46px/1 'Cormorant Garamond',serif;color:#FFF9F2">{{ decQ }}</h2>
+    <p style="margin:14px 0 0;font:italic 300 19px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">{{ decHint }}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:26px">
+      <sc-for list="{{ decChips }}" as="c" hint-placeholder-count="5"><button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+    </div>
+    <textarea value="{{ decNote }}" onChange="{{ onDecNote }}" placeholder="a word, a note, or more" style="width:100%;box-sizing:border-box;margin-top:24px;min-height:110px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 22px/1.35 'Cormorant Garamond',serif;resize:none;padding:6px 0;outline:none"></textarea>
+    <button onClick="{{ decNext }}" style="margin-top:30px;width:100%;height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">{{ decNextLabel }}</button>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isSkill }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <button onClick="{{ skillBack }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← The Inner Garden</button>
+    <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B;margin-top:30px">{{ skKicker }}</div>
+    <sc-if value="{{ decSummary }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:10px 0 0;font:italic 300 18px/1.35 'Cormorant Garamond',serif;color:rgba(245,237,229,.8)">{{ decSummary }}</p>
+    </sc-if>
+    <h2 style="margin:16px 0 0;font:300 54px/.95 'Cormorant Garamond',serif;color:#FFF9F2">{{ skName }}</h2>
+    <p style="margin:20px 0 0;font:400 17px/1.5 'DM Sans',sans-serif;color:#F5EDE5;text-wrap:pretty">{{ skDef }}</p>
+    <sc-if value="{{ skHasLetters }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:22px;border-top:1px solid rgba(245,237,229,.18)">
+        <sc-for list="{{ skLetters }}" as="x" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:40px 1fr;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(245,237,229,.12)">
+            <span style="font:300 30px 'Cormorant Garamond',serif;color:#B7A17B">{{ x.l }}</span>
+            <span><span style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">{{ x.w }}</span> <span style="font:italic 300 17px 'Cormorant Garamond',serif;color:rgba(245,237,229,.8)">{{ x.d }}</span></span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    <div style="margin-top:28px;padding:18px 0 18px 18px;border-left:1px solid #C58F9C">
+      <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#C58F9C">A small example</div>
+      <p style="margin:8px 0 0;font:italic 300 21px/1.35 'Cormorant Garamond',serif;color:#EBCFD0;text-wrap:pretty">{{ skEx }}</p>
+    </div>
+    <div style="margin-top:34px;border-top:1px solid rgba(245,237,229,.18);padding-top:22px">
+      <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">Try it once</div>
+      <p style="margin:10px 0 0;font:400 16px/1.5 'DM Sans',sans-serif;color:#F5EDE5">{{ skTask }}</p>
+      <sc-for list="{{ skFields }}" as="f" hint-placeholder-count="2">
+        <label style="display:block;margin-top:20px;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.75)">{{ f.label }}
+          <textarea value="{{ f.value }}" onChange="{{ f.onChange }}" placeholder="a word is enough" style="display:block;width:100%;box-sizing:border-box;margin-top:6px;min-height:64px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 21px/1.35 'Cormorant Garamond',serif;resize:none;padding:4px 0;outline:none"></textarea>
+        </label>
+      </sc-for>
+      <sc-if value="{{ skHasSound }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:26px;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.75)">Play it with</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+          <sc-for list="{{ sounds }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.onClick }}" style="{{ o.style }}"><span style="display:block;font:400 22px/1 'Cormorant Garamond',serif">{{ o.who }}</span><span style="display:block;margin-top:4px;font:400 13px 'DM Sans',sans-serif;opacity:.85">{{ o.what }}</span></button></sc-for>
+        </div>
+        <sc-if value="{{ soundLine }}" hint-placeholder-val="{{ false }}"><p style="margin:14px 0 0;font:italic 300 18px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">{{ soundLine }}</p></sc-if>
+      </sc-if>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:34px">
+      <button onClick="{{ toggleKeep }}" style="{{ keepStyle }}">{{ keepLabel }}</button>
+      <sc-if value="{{ fromDec }}" hint-placeholder-val="{{ false }}">
+        <button onClick="{{ tryOther }}" style="min-height:48px;background:none;border:none;font:italic 300 19px 'Cormorant Garamond',serif;color:#EBCFD0;cursor:pointer">or try {{ otherName }} instead</button>
+      </sc-if>
+      <button onClick="{{ goThreshold }}" style="min-height:48px;background:none;border:none;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.75);cursor:pointer">Return to the Threshold</button>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isDearMan }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <button onClick="{{ dmBack }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← {{ dmBackLabel }}</button>
+      <span style="font:300 20px 'Cormorant Garamond',serif;color:#C58F9C">DEAR MAN</span>
+    </div>
+    <sc-if value="{{ dmIsCtx }}" hint-placeholder-val="{{ false }}">
+      <h2 style="margin:40px 0 0;font:300 46px/1 'Cormorant Garamond',serif;color:#FFF9F2">A rehearsal</h2>
+      <p style="margin:14px 0 0;font:400 16px/1.5 'DM Sans',sans-serif;color:#F5EDE5">A way to ask for what I need, or say no, and stay whole while I do it. We'll write it line by line.</p>
+      <p style="margin:24px 0 12px;font:italic 300 21px 'Cormorant Garamond',serif;color:#EBCFD0">Who is this for?</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ dmCtxOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.onClick }}" style="min-height:76px;padding:12px 20px;border:1.5px solid rgba(245,237,229,.45);background:rgba(245,237,229,.04);border-radius:22px;text-align:left;cursor:pointer;color:#FFF9F2"><span style="display:block;font:400 26px 'Cormorant Garamond',serif">{{ o.title }}</span><span style="display:block;margin-top:2px;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.75)">{{ o.sub }}</span></button></sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ dmIsLine }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;gap:4px;margin-top:10px"><sc-for list="{{ dmProgress }}" as="p" hint-placeholder-count="4"><span style="{{ p }}"></span></sc-for></div>
+      <div style="display:flex;align-items:baseline;gap:14px;margin-top:40px">
+        <span style="font:300 92px/.8 'Cormorant Garamond',serif;color:#B7A17B">{{ dmL }}</span>
+        <span style="font:500 13px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#F5EDE5">{{ dmW }}</span>
+      </div>
+      <h2 style="margin:22px 0 0;font:300 36px/1.05 'Cormorant Garamond',serif;color:#FFF9F2">{{ dmQ }}</h2>
+      <p style="margin:14px 0 0;font:italic 300 18px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">e.g. “{{ dmEx }}”</p>
+      <textarea value="{{ dmVal }}" onChange="{{ onDm }}" placeholder="in my own words" style="width:100%;box-sizing:border-box;margin-top:24px;min-height:110px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 22px/1.35 'Cormorant Garamond',serif;resize:none;padding:6px 0;outline:none"></textarea>
+      <button onClick="{{ dmNext }}" style="margin-top:30px;width:100%;height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">Next line</button>
+    </sc-if>
+    <sc-if value="{{ dmIsScript }}" hint-placeholder-val="{{ false }}">
+      <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B;margin-top:40px">My script · {{ dmCtxName }}</div>
+      <div style="margin-top:18px;border-top:1px solid rgba(245,237,229,.18)">
+        <sc-for list="{{ dmScript }}" as="x" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:36px 1fr;padding:14px 0;border-bottom:1px solid rgba(245,237,229,.12)">
+            <span style="font:300 26px/1 'Cormorant Garamond',serif;color:#B7A17B">{{ x.l }}</span>
+            <span style="{{ x.style }}">{{ x.text }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#C58F9C;margin-top:34px">While I say it · MAN</div>
+      <sc-for list="{{ dmMan }}" as="x" hint-placeholder-count="3">
+        <div style="display:grid;grid-template-columns:36px 1fr;padding:12px 0">
+          <span style="font:300 26px/1 'Cormorant Garamond',serif;color:#C58F9C">{{ x.l }}</span>
+          <span><span style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">{{ x.w }}</span><span style="display:block;margin-top:2px;font:italic 300 18px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.82)">{{ x.d }}</span></span>
+        </div>
+      </sc-for>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px">
+        <button onClick="{{ toggleKeepDm }}" style="{{ keepDmStyle }}">{{ keepDmLabel }}</button>
+        <button onClick="{{ dmRestart }}" style="min-height:48px;background:none;border:none;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.75);cursor:pointer">Rehearse another</button>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isPause }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <button onClick="{{ pBack }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← {{ pBackLabel }}</button>
+      <span style="font:300 20px 'Cormorant Garamond',serif;color:#C58F9C">The Pause</span>
+    </div>
+    <sc-if value="{{ pIsQ }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:40px 0 0;font:italic 300 19px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">Before the message leaves my hands.</p>
+      <h2 style="margin:14px 0 0;font:300 44px/1 'Cormorant Garamond',serif;color:#FFF9F2">{{ pQ }}</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:26px">
+        <sc-for list="{{ pChips }}" as="c" hint-placeholder-count="6"><button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+      </div>
+      <textarea value="{{ pNote }}" onChange="{{ onPNote }}" placeholder="or say it here" style="width:100%;box-sizing:border-box;margin-top:24px;min-height:90px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 22px/1.35 'Cormorant Garamond',serif;resize:none;padding:6px 0;outline:none"></textarea>
+      <button onClick="{{ pNext }}" style="margin-top:30px;width:100%;height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">Next</button>
+    </sc-if>
+    <sc-if value="{{ pIsEnd }}" hint-placeholder-val="{{ false }}">
+      <h2 style="margin:40px 0 0;font:300 46px/1 'Cormorant Garamond',serif;color:#FFF9F2">The message can wait.</h2>
+      <p style="margin:16px 0 0;font:italic 300 21px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">It will still be there in twenty minutes. I will be more myself.</p>
+      <div style="margin-top:26px;border-top:1px solid rgba(245,237,229,.18)">
+        <sc-for list="{{ pSummary }}" as="x" hint-placeholder-count="3">
+          <div style="padding:14px 0;border-bottom:1px solid rgba(245,237,229,.12)">
+            <div style="font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.7)">{{ x.k }}</div>
+            <div style="margin-top:4px;font:italic 300 21px/1.3 'Cormorant Garamond',serif;color:#FFF9F2">{{ x.v }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:28px">
+        <button onClick="{{ openFast }}" style="height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">Rewrite it with FAST</button>
+        <button onClick="{{ goGarden }}" style="min-height:48px;background:none;border:none;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.75);cursor:pointer">Set it down for now</button>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isJournal }}" hint-placeholder-val="{{ false }}">
+  <div style="position:relative;height:380px">
+    <div style="position:absolute;top:100px;left:24px;width:210px;bottom:0;border-radius:999px 999px 0 0;border:1px solid rgba(183,161,123,.75);padding:6px;box-sizing:border-box">
+      <div style="position:relative;height:100%;border-radius:999px 999px 0 0;overflow:hidden;background:radial-gradient(90% 70% at 35% 25%,#9C8466,#7A6449 55%,#4A3D2E);color:#F5EDE5">
+        <image-slot id="art-journal" shape="rect" placeholder="Drop your painting"></image-slot>
+        <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(27,36,25,0) 60%,rgba(27,36,25,.75) 100%)"></div>
+      </div>
+    </div>
+    <div style="position:absolute;pointer-events:none;right:24px;bottom:24px;text-align:right">
+      <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B;margin-bottom:10px">III /</div>
+      <h1 style="margin:0;font:300 54px/.92 'Cormorant Garamond',serif;letter-spacing:.02em;text-transform:uppercase;color:#FFF9F2">The<br>Journal</h1><div style="font:400 30px/1 'Kristi',cursive;color:#EBCFD0;margin-top:10px;transform:rotate(-4deg)">set the day down</div>
+    </div>
+  </div>
+  <p style="margin:18px 24px 0;text-align:right;font:italic 300 19px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">A place to set the day down.</p>
+  <div style="margin:30px 24px 0;border-top:1px solid rgba(245,237,229,.18)">
+    <sc-for list="{{ journalRows }}" as="r" hint-placeholder-count="4">
+      <button onClick="{{ r.onClick }}" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(245,237,229,.18);padding:20px 0;display:grid;grid-template-columns:56px 1fr auto;align-items:start;text-align:left;cursor:pointer;color:#FFF9F2">
+        <span style="font:300 22px 'Cormorant Garamond',serif;color:#B7A17B">{{ r.num }}</span>
+        <span><span style="display:block;font:400 28px/1.05 'Cormorant Garamond',serif">{{ r.title }}</span><span style="display:block;margin-top:6px;font:400 14px/1.4 'DM Sans',sans-serif;color:rgba(245,237,229,.78)">{{ r.line }}</span></span>
+        <span style="font:300 26px 'Cormorant Garamond',serif;color:#B7A17B">→</span>
+      </button>
+    </sc-for>
+  </div>
+  <p style="margin:24px 24px 0;font:400 12px/1.5 'DM Sans',sans-serif;color:rgba(245,237,229,.65)">Everything you write stays on this phone.</p>
+</sc-if>
+
+<sc-if value="{{ isFlow }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <button onClick="{{ flowBack }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← {{ flowBackLabel }}</button>
+      <span style="font:300 20px 'Cormorant Garamond',serif;color:#B7A17B">{{ flowName }}</span>
+    </div>
+    <div style="display:flex;gap:4px;margin-top:10px"><sc-for list="{{ flowProgress }}" as="p" hint-placeholder-count="5"><span style="{{ p }}"></span></sc-for></div>
+    <sc-if value="{{ flowAsking }}" hint-placeholder-val="{{ false }}">
+      <h2 style="margin:44px 0 0;font:300 44px/1 'Cormorant Garamond',serif;color:#FFF9F2;text-wrap:pretty">{{ flowQ }}</h2>
+      <p style="margin:14px 0 0;font:italic 300 19px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">{{ flowHint }}</p>
+      <sc-if value="{{ flowHasChips }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:26px"><sc-for list="{{ flowChips }}" as="c" hint-placeholder-count="5"><button onClick="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for></div>
+      </sc-if>
+      <sc-if value="{{ flowHasScale }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;justify-content:space-between;margin-top:28px"><sc-for list="{{ flowDots }}" as="d" hint-placeholder-count="6"><button onClick="{{ d.onClick }}" style="{{ d.style }}">{{ d.label }}</button></sc-for></div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.7)"><span>{{ flowLo }}</span><span>{{ flowHi }}</span></div>
+      </sc-if>
+      <textarea value="{{ flowNote }}" onChange="{{ onFlowNote }}" placeholder="{{ flowPh }}" style="width:100%;box-sizing:border-box;margin-top:24px;min-height:110px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 22px/1.35 'Cormorant Garamond',serif;resize:none;padding:6px 0;outline:none"></textarea>
+      <button onClick="{{ flowNext }}" style="margin-top:30px;width:100%;height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">{{ flowNextLabel }}</button>
+    </sc-if>
+    <sc-if value="{{ isDiaryDone }}" hint-placeholder-val="{{ false }}">
+      <h2 style="margin:44px 0 0;font:300 46px/1 'Cormorant Garamond',serif;color:#FFF9F2">Tonight’s card is kept.</h2>
+      <p style="margin:14px 0 0;font:italic 300 21px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">Rest counts. Whatever today held, you met it.</p>
+      <div style="margin-top:26px;border-top:1px solid rgba(245,237,229,.18)">
+        <sc-for list="{{ diarySummary }}" as="x" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:110px 1fr;gap:10px;padding:14px 0;border-bottom:1px solid rgba(245,237,229,.12)">
+            <span style="font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.7)">{{ x.k }}</span>
+            <span style="font:italic 300 20px/1.3 'Cormorant Garamond',serif;color:#FFF9F2">{{ x.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isMirrorDone }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:44px;font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#853C50;color:#C58F9C">The old voice · {{ mirrorWhose }}</div>
+      <p style="margin:10px 0 0;font:italic 300 21px/1.35 'Cormorant Garamond',serif;color:rgba(245,237,229,.6);text-decoration:line-through;text-decoration-color:rgba(197,143,156,.6);text-decoration-thickness:1px">{{ mirrorOld }}</p>
+      <div style="margin-top:34px;padding-top:24px;border-top:1px solid #B7A17B">
+        <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">What Wura knows</div>
+        <p style="margin:12px 0 0;font:italic 400 28px/1.3 'Cormorant Garamond',serif;color:#FFF9F2;text-wrap:pretty">{{ mirrorWura }}</p>
+      </div>
+    </sc-if>
+    <sc-if value="{{ flowDone }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ goJournal }}" style="margin-top:34px;width:100%;height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">Return to the Journal</button>
+    </sc-if>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isFree }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <button onClick="{{ goJournal }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← The Journal</button>
+    <h2 style="margin:30px 0 0;font:300 46px/1 'Cormorant Garamond',serif;color:#FFF9F2">Free writing</h2>
+    <sc-if value="{{ freePrompt }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:16px 0 0;font:italic 300 22px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">{{ freePrompt }}</p>
+    </sc-if>
+    <div style="display:flex;gap:16px;margin-top:8px">
+      <button onClick="{{ nextPrompt }}" style="min-height:44px;background:none;border:none;padding:0;font:400 13px 'DM Sans',sans-serif;color:#B7A17B;cursor:pointer;text-decoration:underline;text-underline-offset:4px">{{ promptLabel }}</button>
+      <sc-if value="{{ freePrompt }}" hint-placeholder-val="{{ false }}"><button onClick="{{ clearPrompt }}" style="min-height:44px;background:none;border:none;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.7);cursor:pointer">No prompt</button></sc-if>
+    </div>
+    <textarea value="{{ freeText }}" onChange="{{ onFreeText }}" placeholder="whatever wants to be written" style="width:100%;box-sizing:border-box;margin-top:14px;min-height:280px;background:transparent;border:none;border-top:1px solid rgba(245,237,229,.18);color:#FFF9F2;font:italic 300 22px/1.45 'Cormorant Garamond',serif;resize:none;padding:16px 0;outline:none"></textarea>
+    <button onClick="{{ saveFree }}" style="margin-top:20px;width:100%;height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">Keep this page</button>
+    <p style="margin:14px 0 0;text-align:center;font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.65)">{{ freeCount }}</p>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isTherapist }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <button onClick="{{ goJournal }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← The Journal</button>
+      <button onClick="{{ exportPdf }}" style="min-height:44px;padding:0 18px;border:1px solid rgba(245,237,229,.45);border-radius:999px;background:transparent;color:#FFF9F2;font:500 13px 'DM Sans',sans-serif;cursor:pointer">Export PDF ↓</button>
+    </div>
+    <div style="position:relative;width:34px;height:34px;margin-top:26px"><sc-for list="{{ markPetals }}" as="p" hint-placeholder-count="8"><span style="{{ p }}"></span></sc-for></div>
+    <h1 style="margin:18px 0 0;font:300 50px/.95 'Cormorant Garamond',serif;letter-spacing:.02em;text-transform:uppercase;color:#FFF9F2">For my<br>therapist</h1>
+    <div style="font:400 34px/1 'Kristi',cursive;color:#B7A17B;margin:12px 0 0 4px;transform:rotate(-3deg)">the week of {{ weekLabel }}</div>
+    <p style="margin:16px 0 0;font:italic 300 19px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">Observations, not verdicts. Bring what feels true.</p>
+    <button onClick="{{ gather }}" style="margin-top:16px;min-height:44px;padding:0 18px;border:1px solid rgba(183,161,123,.7);border-radius:999px;background:transparent;color:#F5EDE5;font:400 13px 'DM Sans',sans-serif;cursor:pointer">Gather from my journal</button>
+    <div style="margin-top:22px;border-top:1px solid rgba(183,161,123,.35)">
+    <div style="display:grid;grid-template-columns:52px minmax(0,1fr);padding:26px 0;border-bottom:1px solid rgba(183,161,123,.35)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font:300 30px/1 'Cormorant Garamond',serif;color:#B7A17B;font-variant-numeric:tabular-nums">01</span>
+        <span style="margin:14px 0 0 12px;width:9px;height:9px;border-radius:50%;background:#F5EDE5;box-shadow:0 0 8px rgba(245,237,229,.7);margin-left:8px"></span>
+        <span style="flex:1;min-height:30px;width:1px;margin-left:12px;background:linear-gradient(180deg,#B7A17B,rgba(183,161,123,0))"></span>
+      </div>
+      <div style="min-width:0">
+        <div style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">My week in feelings</div>
+        <div style="margin-top:4px;font:italic 300 17px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.75)">The ones that visited most. Tap a bloom to let it grow.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px 4px;margin-top:18px">
+          <sc-for list="{{ wkFeel }}" as="b" hint-placeholder-count="4">
+            <div style="position:relative;width:92px;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <button onClick="{{ b.onGrow }}" style="position:relative;width:72px;height:72px;background:none;border:none;padding:0;cursor:pointer"><sc-for list="{{ b.petals }}" as="p" hint-placeholder-count="5"><span style="{{ p }}"></span></sc-for><span style="position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#B7A17B"></span></button>
+              <span style="font:400 13px/1.2 'DM Sans',sans-serif;color:#F5EDE5;text-align:center">{{ b.name }}</span>
+              <span style="font:400 20px/1 'Kristi',cursive;color:#C58F9C">{{ b.often }}</span>
+              <button onClick="{{ b.onRemove }}" aria-label="Remove" style="position:absolute;top:-10px;right:-4px;width:44px;height:44px;background:none;border:none;color:rgba(245,237,229,.45);font:300 16px 'DM Sans',sans-serif;cursor:pointer">×</button>
+            </div>
+          </sc-for>
+        </div>
+        <button onClick="{{ toggleAddFeel }}" style="margin-top:14px;min-height:44px;padding:0;background:none;border:none;font:400 13px 'DM Sans',sans-serif;color:#B7A17B;cursor:pointer;text-decoration:underline;text-underline-offset:4px">{{ addFeelLabel }}</button>
+        <sc-if value="{{ addingFeel }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"><sc-for list="{{ feelToAdd }}" as="c" hint-placeholder-count="4"><button onClick="{{ c.onClick }}" style="min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(245,237,229,.3);background:transparent;color:#F5EDE5;font:400 14px 'DM Sans',sans-serif;cursor:pointer">{{ c.label }}</button></sc-for></div>
+        </sc-if>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:52px minmax(0,1fr);padding:26px 0;border-bottom:1px solid rgba(183,161,123,.35)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font:300 30px/1 'Cormorant Garamond',serif;color:#B7A17B;font-variant-numeric:tabular-nums">02</span>
+        <span style="margin:14px 0 0 12px;width:9px;height:9px;border-radius:50%;background:#F5EDE5;box-shadow:0 0 8px rgba(245,237,229,.7);margin-left:8px"></span>
+        <span style="flex:1;min-height:30px;width:1px;margin-left:12px;background:linear-gradient(180deg,#B7A17B,rgba(183,161,123,0))"></span>
+      </div>
+      <div style="min-width:0">
+        <div style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">Funsho &amp; Wura</div>
+        <div style="margin-top:4px;font:italic 300 17px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.75)">How present each felt. Tap to adjust.</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+          <sc-for list="{{ wkLights }}" as="l" hint-placeholder-count="2">
+            <button onClick="{{ l.onClick }}" style="border:1.5px solid rgba(245,237,229,.45);background:rgba(245,237,229,.04);border-radius:22px;padding:16px 10px;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;color:#FFF9F2">
+              <span style="position:relative;width:84px;height:84px;display:block"><sc-for list="{{ l.rings }}" as="r" hint-placeholder-count="3"><span style="{{ r }}"></span></sc-for><span style="{{ l.orb }}"></span></span>
+              <span style="font:400 24px/1 'Cormorant Garamond',serif">{{ l.name }}</span>
+              <span style="font:400 22px/1 'Kristi',cursive;color:#EBCFD0">{{ l.level }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:52px minmax(0,1fr);padding:26px 0;border-bottom:1px solid rgba(183,161,123,.35)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font:300 30px/1 'Cormorant Garamond',serif;color:#B7A17B;font-variant-numeric:tabular-nums">03</span>
+        <span style="margin:14px 0 0 12px;width:9px;height:9px;border-radius:50%;background:#F5EDE5;box-shadow:0 0 8px rgba(245,237,229,.7);margin-left:8px"></span>
+        <span style="flex:1;min-height:30px;width:1px;margin-left:12px;background:linear-gradient(180deg,#B7A17B,rgba(183,161,123,0))"></span>
+      </div>
+      <div style="min-width:0">
+        <div style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">Energy</div>
+        <div style="margin-top:4px;font:italic 300 17px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.75)">One petal for each day. Tap to fill.</div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);margin-top:16px">
+          <sc-for list="{{ wkEnergy }}" as="e" hint-placeholder-count="7">
+            <button onClick="{{ e.onClick }}" style="background:none;border:none;padding:0;min-height:80px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer">
+              <span style="position:relative;display:block;width:22px;height:44px;border:1px solid rgba(183,161,123,.85);border-radius:50% 50% 50% 50% / 64% 64% 36% 36%;overflow:hidden"><span style="{{ e.fill }}"></span></span>
+              <span style="font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.75)">{{ e.day }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="font:400 22px/1 'Kristi',cursive;color:#C58F9C;margin-top:6px">quiet days count too</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:52px minmax(0,1fr);padding:26px 0;border-bottom:1px solid rgba(183,161,123,.35)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font:300 30px/1 'Cormorant Garamond',serif;color:#B7A17B;font-variant-numeric:tabular-nums">04</span>
+        <span style="margin:14px 0 0 12px;width:9px;height:9px;border-radius:50%;background:#F5EDE5;box-shadow:0 0 8px rgba(245,237,229,.7);margin-left:8px"></span>
+        <span style="flex:1;min-height:30px;width:1px;margin-left:12px;background:linear-gradient(180deg,#B7A17B,rgba(183,161,123,0))"></span>
+      </div>
+      <div style="min-width:0">
+        <div style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">Skills I reached for</div>
+        <div style="margin-top:4px;font:italic 300 17px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.75)"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+          <sc-for list="{{ wkSkills.items }}" as="t" hint-placeholder-count="3"><span style="display:inline-flex;align-items:center;min-height:44px;padding-left:16px;border:1px solid rgba(245,237,229,.4);border-radius:999px;font:400 14px 'DM Sans',sans-serif;color:#F5EDE5">{{ t.text }}<button onClick="{{ t.onRemove }}" aria-label="Remove" style="flex:none;width:44px;height:44px;background:none;border:none;color:rgba(245,237,229,.55);font:300 20px 'DM Sans',sans-serif;cursor:pointer">×</button></span></sc-for>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
+          <input value="{{ wkSkills.draft }}" onChange="{{ wkSkills.onDraft }}" onKeyDown="{{ wkSkills.onKey }}" placeholder="add a skill" style="flex:1;min-width:0;height:44px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 19px 'Cormorant Garamond',serif;outline:none;padding:0">
+          <button onClick="{{ wkSkills.add }}" aria-label="Add" style="flex:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,237,229,.45);background:transparent;color:#FFF9F2;font:300 22px 'DM Sans',sans-serif;cursor:pointer">+</button>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:52px minmax(0,1fr);padding:26px 0;border-bottom:1px solid rgba(183,161,123,.35)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font:300 30px/1 'Cormorant Garamond',serif;color:#B7A17B;font-variant-numeric:tabular-nums">05</span>
+        <span style="margin:14px 0 0 12px;width:9px;height:9px;border-radius:50%;background:#F5EDE5;box-shadow:0 0 8px rgba(245,237,229,.7);margin-left:8px"></span>
+        <span style="flex:1;min-height:30px;width:1px;margin-left:12px;background:linear-gradient(180deg,#B7A17B,rgba(183,161,123,0))"></span>
+      </div>
+      <div style="min-width:0">
+        <div style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">Hard moments</div>
+        <div style="margin-top:4px;font:italic 300 17px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.75)">One line each, in my own words.</div>
+        <div style="margin-top:10px">
+          <sc-for list="{{ wkHard.items }}" as="t" hint-placeholder-count="1"><div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(245,237,229,.12)"><span style="flex:1;font:italic 300 20px/1.3 'Cormorant Garamond',serif;color:#FFF9F2">{{ t.text }}</span><button onClick="{{ t.onRemove }}" aria-label="Remove" style="flex:none;width:44px;height:44px;background:none;border:none;color:rgba(245,237,229,.55);font:300 20px 'DM Sans',sans-serif;cursor:pointer">×</button></div></sc-for>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
+          <input value="{{ wkHard.draft }}" onChange="{{ wkHard.onDraft }}" onKeyDown="{{ wkHard.onKey }}" placeholder="one line is enough" style="flex:1;min-width:0;height:44px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 19px 'Cormorant Garamond',serif;outline:none;padding:0">
+          <button onClick="{{ wkHard.add }}" aria-label="Add" style="flex:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,237,229,.45);background:transparent;color:#FFF9F2;font:300 22px 'DM Sans',sans-serif;cursor:pointer">+</button>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:52px minmax(0,1fr);padding:26px 0;border-bottom:1px solid rgba(183,161,123,.35)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font:300 30px/1 'Cormorant Garamond',serif;color:#B7A17B;font-variant-numeric:tabular-nums">06</span>
+        <span style="margin:14px 0 0 12px;width:9px;height:9px;border-radius:50%;background:#F5EDE5;box-shadow:0 0 8px rgba(245,237,229,.7);margin-left:8px"></span>
+        <span style="flex:1;min-height:30px;width:1px;margin-left:12px;background:linear-gradient(180deg,#B7A17B,rgba(183,161,123,0))"></span>
+      </div>
+      <div style="min-width:0">
+        <div style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">Things I want to talk about</div>
+        <div style="margin-top:4px;font:italic 300 17px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.75)">Saved during the week.</div>
+        <div style="margin-top:10px">
+          <sc-for list="{{ wkTalk.items }}" as="t" hint-placeholder-count="2"><div style="display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid rgba(245,237,229,.12)"><span style="flex:1;font:italic 300 20px/1.3 'Cormorant Garamond',serif;color:#FFF9F2">{{ t.text }}</span><button onClick="{{ t.onRemove }}" aria-label="Remove" style="flex:none;width:44px;height:44px;background:none;border:none;color:rgba(245,237,229,.55);font:300 20px 'DM Sans',sans-serif;cursor:pointer">×</button></div></sc-for>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
+          <input value="{{ wkTalk.draft }}" onChange="{{ wkTalk.onDraft }}" onKeyDown="{{ wkTalk.onKey }}" placeholder="a topic or a question" style="flex:1;min-width:0;height:44px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 19px 'Cormorant Garamond',serif;outline:none;padding:0">
+          <button onClick="{{ wkTalk.add }}" aria-label="Add" style="flex:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,237,229,.45);background:transparent;color:#FFF9F2;font:300 22px 'DM Sans',sans-serif;cursor:pointer">+</button>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:52px minmax(0,1fr);padding:26px 0;border-bottom:1px solid rgba(183,161,123,.35)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font:300 30px/1 'Cormorant Garamond',serif;color:#B7A17B;font-variant-numeric:tabular-nums">07</span>
+        <span style="margin:14px 0 0 12px;width:9px;height:9px;border-radius:50%;background:#F5EDE5;box-shadow:0 0 8px rgba(245,237,229,.7);margin-left:8px"></span>
+        <span style="flex:1;min-height:30px;width:1px;margin-left:12px;background:linear-gradient(180deg,#B7A17B,rgba(183,161,123,0))"></span>
+      </div>
+      <div style="min-width:0">
+        <div style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">Homework</div>
+        <div style="margin-top:4px;font:italic 300 17px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.75)">Tasks from therapy. Unchecked is still welcome here.</div>
+        <div style="margin-top:10px">
+          <sc-for list="{{ wkHome.items }}" as="t" hint-placeholder-count="1"><div style="display:flex;align-items:center;gap:6px;padding:4px 0;border-bottom:1px solid rgba(245,237,229,.12)"><button onClick="{{ t.onToggle }}" aria-label="Mark" style="flex:none;width:44px;height:44px;margin-left:-11px;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center"><span style="{{ t.check }}"></span></button><span style="{{ t.textStyle }}">{{ t.text }}</span><button onClick="{{ t.onRemove }}" aria-label="Remove" style="flex:none;width:44px;height:44px;background:none;border:none;color:rgba(245,237,229,.55);font:300 20px 'DM Sans',sans-serif;cursor:pointer">×</button></div></sc-for>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:12px">
+          <input value="{{ wkHome.draft }}" onChange="{{ wkHome.onDraft }}" onKeyDown="{{ wkHome.onKey }}" placeholder="add a task" style="flex:1;min-width:0;height:44px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 19px 'Cormorant Garamond',serif;outline:none;padding:0">
+          <button onClick="{{ wkHome.add }}" aria-label="Add" style="flex:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(245,237,229,.45);background:transparent;color:#FFF9F2;font:300 22px 'DM Sans',sans-serif;cursor:pointer">+</button>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:52px minmax(0,1fr);padding:26px 0;border-bottom:1px solid rgba(183,161,123,.35)">
+      <div style="display:flex;flex-direction:column;align-items:flex-start">
+        <span style="font:300 30px/1 'Cormorant Garamond',serif;color:#B7A17B;font-variant-numeric:tabular-nums">08</span>
+        <span style="margin:14px 0 0 12px;width:9px;height:9px;border-radius:50%;background:#F5EDE5;box-shadow:0 0 8px rgba(245,237,229,.7);margin-left:8px"></span>
+        <span style="flex:1;min-height:30px;width:1px;margin-left:12px;background:linear-gradient(180deg,#B7A17B,rgba(183,161,123,0))"></span>
+      </div>
+      <div style="min-width:0">
+        <div style="font:500 15px 'DM Sans',sans-serif;color:#FFF9F2">One thing I’m proud of</div>
+        <div style="margin-top:4px;font:italic 300 17px/1.3 'Cormorant Garamond',serif;color:rgba(245,237,229,.75)">From my Gold Box, or new.</div>
+        <div style="margin-top:14px;border:1.5px solid rgba(183,161,123,.7);background:rgba(183,161,123,.06);border-radius:22px;padding:16px 18px">
+          <textarea value="{{ proud }}" onChange="{{ onProud }}" placeholder="something small and true" style="width:100%;box-sizing:border-box;min-height:80px;background:transparent;border:none;color:#FFF9F2;font:italic 300 23px/1.35 'Cormorant Garamond',serif;resize:none;padding:0;outline:none"></textarea>
+          <button onClick="{{ keepGold }}" style="margin-top:6px;min-height:44px;padding:0;background:none;border:none;font:400 13px 'DM Sans',sans-serif;color:#B7A17B;cursor:pointer;text-decoration:underline;text-underline-offset:4px">{{ keepGoldLabel }}</button>
+        </div>
+        <sc-if value="{{ hasGold }}" hint-placeholder-val="{{ false }}">
+          <div style="font:400 24px/1 'Kristi',cursive;color:#B7A17B;margin-top:16px">from my Gold Box</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><sc-for list="{{ goldList }}" as="g" hint-placeholder-count="2"><button onClick="{{ g.onClick }}" style="min-height:44px;padding:6px 16px;border-radius:999px;border:1px solid rgba(183,161,123,.6);background:transparent;color:#F5EDE5;font:italic 300 17px 'Cormorant Garamond',serif;cursor:pointer;text-align:left">{{ g.text }}</button></sc-for></div>
+        </sc-if>
+      </div>
+    </div>
+    </div>
+    <button onClick="{{ exportPdf }}" style="margin-top:30px;width:100%;height:58px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">Export this week as PDF  →</button>
+    <p style="margin:14px 0 0;text-align:center;font:400 12px/1.5 'DM Sans',sans-serif;color:rgba(245,237,229,.65)">Stays on this phone until you export it.</p>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isPast }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <button onClick="{{ goJournal }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← The Journal</button>
+    <h1 style="margin:26px 0 0;font:300 50px/.95 'Cormorant Garamond',serif;letter-spacing:.02em;text-transform:uppercase;color:#FFF9F2">Past pages</h1>
+    <div style="font:400 30px/1 'Kristi',cursive;color:#B7A17B;margin:12px 0 0 4px;transform:rotate(-3deg)">everything I’ve set down</div>
+    <sc-if value="{{ pastEmpty }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:30px 0 0;padding-top:20px;border-top:1px solid rgba(183,161,123,.35);font:italic 300 21px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">Nothing here yet. Your check-ins, diary cards, pages and Mirror entries will gather here, day by day.</p>
+    </sc-if>
+    <sc-for list="{{ pastGroups }}" as="g" hint-placeholder-count="2">
+      <div style="margin-top:30px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:10px;border-bottom:1px solid rgba(183,161,123,.35)">
+          <span style="font:400 26px/1 'Kristi',cursive;color:#B7A17B">{{ g.label }}</span>
+          <span style="font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.65)">{{ g.date }}</span>
+        </div>
+        <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="2">
+          <button onClick="{{ it.onClick }}" style="width:100%;background:none;border:none;border-bottom:1px solid rgba(245,237,229,.12);padding:16px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;text-align:left;cursor:pointer;color:#FFF9F2">
+            <span style="min-width:0"><span style="display:block;font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:{{ it.tint }}">{{ it.type }}</span><span style="display:block;margin-top:6px;font:italic 300 20px/1.3 'Cormorant Garamond',serif;color:#FFF9F2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ it.preview }}</span></span>
+            <span style="font:300 24px 'Cormorant Garamond',serif;color:#B7A17B">→</span>
+          </button>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isEntry }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:110px 24px 0">
+    <button onClick="{{ goPast }}" style="background:none;border:none;min-height:44px;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.8);cursor:pointer">← Past pages</button>
+    <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B;margin-top:30px">{{ enType }}</div>
+    <h2 style="margin:12px 0 0;font:300 44px/1 'Cormorant Garamond',serif;color:#FFF9F2">{{ enDay }}</h2>
+    <div style="font:400 26px/1 'Kristi',cursive;color:#EBCFD0;margin:10px 0 0 4px;transform:rotate(-3deg)">{{ enDate }}</div>
+    <div style="margin-top:26px;border-top:1px solid rgba(183,161,123,.35)">
+      <sc-for list="{{ enFields }}" as="f" hint-placeholder-count="3">
+        <div style="padding:18px 0;border-bottom:1px solid rgba(245,237,229,.12)">
+          <div style="font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.7)">{{ f.label }}</div>
+          <sc-if value="{{ f.meta }}" hint-placeholder-val="{{ false }}"><div style="margin-top:6px;font:400 15px/1.45 'DM Sans',sans-serif;color:#F5EDE5">{{ f.meta }}</div></sc-if>
+          <sc-if value="{{ f.editable }}" hint-placeholder-val="{{ true }}">
+            <textarea value="{{ f.value }}" onChange="{{ f.onChange }}" placeholder="{{ f.ph }}" style="{{ f.taStyle }}"></textarea>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin:14px 0 0;font:400 12px 'DM Sans',sans-serif;color:rgba(245,237,229,.65)">Changes are kept as you write.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:30px">
+      <sc-if value="{{ delAsk }}" hint-placeholder-val="{{ true }}">
+        <button onClick="{{ askDel }}" style="min-height:48px;background:none;border:none;font:400 13px 'DM Sans',sans-serif;color:#C58F9C;cursor:pointer">Delete this page</button>
+      </sc-if>
+      <sc-if value="{{ delConfirm }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0;text-align:center;font:italic 300 20px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">Let this page go? It can’t be brought back.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <button onClick="{{ cancelDel }}" style="height:52px;border:1px solid rgba(245,237,229,.4);background:transparent;color:#FFF9F2;border-radius:999px;font:500 14px 'DM Sans',sans-serif;cursor:pointer">Keep it</button>
+          <button onClick="{{ doDel }}" style="height:52px;border:1px solid #C58F9C;background:rgba(133,60,80,.4);color:#FFF9F2;border-radius:999px;font:500 14px 'DM Sans',sans-serif;cursor:pointer">Let it go</button>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ isRose }}" hint-placeholder-val="{{ false }}">
+  <div style="position:relative;height:390px">
+    <div style="position:absolute;top:100px;right:24px;width:210px;bottom:0;border-radius:999px 999px 0 0;border:1px solid rgba(183,161,123,.75);padding:6px;box-sizing:border-box">
+      <div style="position:relative;height:100%;border-radius:999px 999px 0 0;overflow:hidden;background:radial-gradient(90% 70% at 35% 25%,#9C8466,#7A6449 55%,#4A3D2E);color:#F5EDE5">
+        <image-slot id="art-rose" shape="rect" placeholder="Drop your painting"></image-slot>
+        <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(27,36,25,0) 60%,rgba(27,36,25,.75) 100%)"></div>
+      </div>
+    </div>
+    <div style="position:absolute;pointer-events:none;left:24px;bottom:24px">
+      <div style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#C58F9C;margin-bottom:10px">IV / Soothing</div>
+      <h1 style="margin:0;font:300 54px/.92 'Cormorant Garamond',serif;letter-spacing:.02em;text-transform:uppercase;color:#FFF9F2">The Rose<br>Room</h1><div style="font:400 30px/1 'Kristi',cursive;color:#EBCFD0;margin-top:10px;transform:rotate(-4deg)">softly, softly</div>
+    </div>
+  </div>
+  <p style="margin:18px 24px 0;font:italic 300 19px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">Soft things, in whatever order you need them.</p>
+
+  <div style="margin:34px 24px 0;border-top:1px solid rgba(245,237,229,.18);padding-top:22px">
+    <span style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">Before work · morning</span>
+    <div style="margin-top:12px">
+      <sc-for list="{{ rituals }}" as="r" hint-placeholder-count="3">
+        <button onClick="{{ r.onClick }}" style="width:100%;min-height:60px;background:none;border:none;border-bottom:1px solid rgba(245,237,229,.12);display:flex;align-items:center;gap:16px;text-align:left;cursor:pointer;padding:0">
+          <span style="{{ r.mark }}"></span>
+          <span style="{{ r.text }}">{{ r.label }}</span>
+        </button>
+      </sc-for>
+    </div>
+    <sc-if value="{{ ritualsDone }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:18px;font:400 36px/1 'Kristi',cursive;color:#B7A17B;transform:rotate(-3deg)">I am the return.</div>
+    </sc-if>
+  </div>
+
+  <div style="margin:40px 24px 0;border-top:1px solid rgba(245,237,229,.18);padding-top:22px">
+    <span style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#C58F9C">After work · 4–5 PM</span>
+    <h2 style="margin:12px 0 0;font:300 34px/1.05 'Cormorant Garamond',serif;color:#FFF9F2">What did I carry home that isn’t mine?</h2>
+    <textarea value="{{ carry }}" onChange="{{ onCarry }}" placeholder="someone’s mood, a tone, a deadline" style="width:100%;box-sizing:border-box;margin-top:18px;min-height:90px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 22px/1.35 'Cormorant Garamond',serif;resize:none;padding:6px 0;outline:none"></textarea>
+    <sc-if value="{{ carryOpen }}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{ setDown }}" style="margin-top:20px;width:100%;height:58px;border:1px solid #C58F9C;background:transparent;color:#FFF9F2;border-radius:999px;font:500 15px 'DM Sans',sans-serif;letter-spacing:.06em;cursor:pointer">Set it down</button>
+    </sc-if>
+    <sc-if value="{{ carryDown }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:18px 0 0;font:italic 300 21px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">Set down. It can stay here tonight. It was never yours to carry.</p>
+    </sc-if>
+  </div>
+
+  <div style="margin:40px 24px 0;border-top:1px solid rgba(245,237,229,.18);padding-top:22px">
+    <span style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">Grounding · five senses</span>
+    <sc-if value="{{ groundAsking }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;align-items:baseline;gap:14px;margin-top:14px">
+        <span style="font:300 92px/.8 'Cormorant Garamond',serif;color:#B7A17B">{{ gNum }}</span>
+        <span style="font:300 28px/1.1 'Cormorant Garamond',serif;color:#FFF9F2">{{ gSense }}</span>
+      </div>
+      <input value="{{ gVal }}" onChange="{{ onG }}" placeholder="a word for each" style="width:100%;box-sizing:border-box;margin-top:18px;height:48px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 21px 'Cormorant Garamond',serif;outline:none;padding:0">
+      <button onClick="{{ gNext }}" style="margin-top:18px;min-height:48px;padding:0 22px;border:1px solid rgba(245,237,229,.35);background:transparent;color:#FFF9F2;border-radius:999px;font:500 14px 'DM Sans',sans-serif;cursor:pointer">Next sense</button>
+    </sc-if>
+    <sc-if value="{{ groundDone }}" hint-placeholder-val="{{ false }}">
+      <h2 style="margin:14px 0 0;font:300 40px/1 'Cormorant Garamond',serif;color:#FFF9F2">You are here.</h2>
+      <p style="margin:10px 0 0;font:italic 300 19px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">In this room, in this body, right now.</p>
+      <button onClick="{{ gRestart }}" style="margin-top:8px;min-height:44px;background:none;border:none;padding:0;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.7);cursor:pointer">Begin again</button>
+    </sc-if>
+  </div>
+
+  <div style="margin:40px 24px 0;border-top:1px solid rgba(245,237,229,.18);padding-top:22px">
+    <span style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">The weight and the hum</span>
+    <div style="margin-top:8px">
+      <sc-for list="{{ cues }}" as="c" hint-placeholder-count="2">
+        <button onClick="{{ c.onClick }}" style="width:100%;min-height:72px;background:none;border:none;border-bottom:1px solid rgba(245,237,229,.12);display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;cursor:pointer;padding:10px 0;color:#FFF9F2">
+          <span><span style="display:block;font:400 24px 'Cormorant Garamond',serif">{{ c.title }}</span><span style="display:block;margin-top:2px;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.75)">{{ c.line }}</span></span>
+          <span style="{{ c.track }}"><span style="{{ c.knob }}"></span></span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="margin:40px 24px 0;border-top:1px solid rgba(245,237,229,.18);padding-top:22px">
+    <span style="font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">In my own words</span>
+    <div style="margin-top:10px">
+      <sc-for list="{{ affirmList }}" as="a" hint-placeholder-count="3">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid rgba(245,237,229,.12)">
+          <span style="font:italic 300 23px/1.3 'Cormorant Garamond',serif;color:#FFF9F2">{{ a.text }}</span>
+          <button onClick="{{ a.onRemove }}" aria-label="Remove" style="flex:none;width:44px;height:44px;background:none;border:none;color:rgba(245,237,229,.55);font:300 22px 'DM Sans',sans-serif;cursor:pointer">×</button>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:flex;gap:10px;align-items:flex-end;margin-top:14px">
+      <input value="{{ afDraft }}" onChange="{{ onAfDraft }}" onKeyDown="{{ afKey }}" placeholder="add one in your own words" style="flex:1;min-width:0;height:48px;background:transparent;border:none;border-bottom:1px solid rgba(245,237,229,.3);color:#FFF9F2;font:italic 300 21px 'Cormorant Garamond',serif;outline:none;padding:0">
+      <button onClick="{{ addAf }}" style="height:48px;padding:0 18px;border:1px solid #B7A17B;background:transparent;color:#FFF9F2;border-radius:999px;font:500 14px 'DM Sans',sans-serif;cursor:pointer">Add</button>
+    </div>
+  </div>
+</sc-if>
+</div>
+
+<div style="position:absolute;top:0;left:0;right:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:52px 18px 0;pointer-events:none">
+  <button onClick="{{ toggleLowTide }}" style="pointer-events:auto;min-height:44px;display:flex;align-items:center;gap:8px;background:rgba(27,36,25,.55);border:none;border-radius:999px;padding:0 14px;color:#F5EDE5;font:400 12px 'DM Sans',sans-serif;letter-spacing:.08em;cursor:pointer">
+    <span style="{{ tideTrack }}"><span style="{{ tideKnob }}"></span></span>Low tide
+  </button>
+  <button onClick="{{ openHold }}" style="pointer-events:auto;min-height:44px;display:flex;align-items:center;gap:8px;background:rgba(27,36,25,.55);border:1px solid rgba(197,143,156,.55);border-radius:999px;padding:0 16px;color:#FFF9F2;font:500 12px 'DM Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">
+    <span style="width:6px;height:6px;border-radius:50%;background:#C58F9C"></span>The Hold
+  </button>
+</div>
+
+<sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;left:14px;right:14px;bottom:20px;z-index:15;background:rgba(20,27,19,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(245,237,229,.4);border-radius:999px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;padding:5px">
+    <sc-for list="{{ nav }}" as="n" hint-placeholder-count="4">
+      <button onClick="{{ n.onClick }}" style="{{ n.style }}">{{ n.label }}</button>
+    </sc-for>
+  </div>
+</sc-if>
+
+<sc-if value="{{ hold }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;z-index:40;background:#1B2419;overflow-y:auto;scrollbar-width:none">
+    <div style="padding:60px 24px 40px">
+      <div style="display:flex;justify-content:flex-end"><button onClick="{{ closeHold }}" style="min-height:44px;background:none;border:none;font:400 13px 'DM Sans',sans-serif;color:rgba(245,237,229,.85);cursor:pointer">Close</button></div>
+      <h2 style="margin:24px 0 0;font:300 64px/.9 'Cormorant Garamond',serif;color:#FFF9F2">The Hold</h2>
+      <p style="margin:16px 0 0;font:italic 300 21px/1.35 'Cormorant Garamond',serif;color:#EBCFD0">You are here. Breathe out longer than you breathe in. You went quiet; you did not disappear.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px">
+        <a href="tel:988" style="height:64px;display:flex;align-items:center;justify-content:center;border:1px solid #C58F9C;background:rgba(133,60,80,.4);color:#FFF9F2;text-decoration:none;border-radius:2px;font:500 16px 'DM Sans',sans-serif">Call 988</a>
+        <a href="sms:988" style="height:64px;display:flex;align-items:center;justify-content:center;border:1px solid #C58F9C;background:transparent;color:#FFF9F2;text-decoration:none;border-radius:2px;font:500 16px 'DM Sans',sans-serif">Text 988</a>
+      </div>
+      <div style="margin-top:30px;border-top:1px solid rgba(245,237,229,.18)">
+        <sc-for list="{{ planFields }}" as="f" hint-placeholder-count="4">
+          <label style="display:block;padding:18px 0;border-bottom:1px solid rgba(245,237,229,.12)">
+            <span style="display:block;font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#B7A17B">{{ f.label }}</span>
+            <textarea value="{{ f.value }}" onChange="{{ f.onChange }}" placeholder="{{ f.ph }}" style="display:block;width:100%;box-sizing:border-box;margin-top:8px;min-height:56px;background:transparent;border:none;color:#FFF9F2;font:italic 300 21px/1.35 'Cormorant Garamond',serif;resize:none;padding:0;outline:none"></textarea>
+          </label>
+        </sc-for>
+      </div>
+      <p style="margin:26px 0 0;font:400 13px/1.5 'DM Sans',sans-serif;color:rgba(245,237,229,.75)">WURA is not a replacement for therapy or emergency care. If you are in immediate danger, call 911. Everything here stays on this phone.</p>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ texture }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;inset:0;z-index:50;pointer-events:none;opacity:.32;mix-blend-mode:overlay;background-image:url(&quot;data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='a'><feTurbulence type='fractalNoise' baseFrequency='.012 .9' numOctaves='2' seed='3'/></filter><filter id='b'><feTurbulence type='fractalNoise' baseFrequency='.9 .012' numOctaves='2' seed='7'/></filter><rect width='100%' height='100%' filter='url(%23a)' opacity='.6'/><rect width='100%' height='100%' filter='url(%23b)' opacity='.6'/></svg>&quot;)"></div>
+  <div style="position:absolute;inset:0;z-index:51;pointer-events:none;mix-blend-mode:multiply;background:radial-gradient(120% 90% at 50% 40%,rgba(255,236,200,0) 55%,rgba(40,26,10,.5) 100%)"></div>
+  <div style="position:absolute;inset:0;z-index:52;pointer-events:none;mix-blend-mode:soft-light;background:rgba(201,160,96,.14)"></div>
+</sc-if>
+</div>
+</div>
+</div>
+
+<div data-print="1" style="display:none;background:#F5EDE5;color:#1B2419;padding:36px 44px;-webkit-print-color-adjust:exact;print-color-adjust:exact;max-width:720px;margin:0 auto">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #B7A17B;padding-bottom:10px">
+    <span style="font:400 13px 'DM Sans',sans-serif;letter-spacing:.24em;color:#303826">WURA</span>
+    <span style="font:400 12px 'DM Sans',sans-serif;color:#303826">Private · kept by Funsho</span>
+  </div>
+  <h1 style="margin:26px 0 0;font:300 44px/1 'Cormorant Garamond',serif;letter-spacing:.02em;text-transform:uppercase;color:#1B2419">For my therapist</h1>
+  <div style="font:400 30px/1 'Kristi',cursive;color:#853C50;margin-top:8px">the week of {{ weekLabel }}</div>
+  <p style="margin:10px 0 0;font:italic 400 15pt/1.35 'Cormorant Garamond',serif;color:#303826">Observations, not verdicts.</p>
+  <div style="margin-top:20px;display:grid;grid-template-columns:44px 1fr;row-gap:0;border-top:1px solid rgba(183,161,123,.6)">
+    <span style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6);font:300 22px 'Cormorant Garamond',serif;color:#8C7550">01</span>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6)"><div style="font:500 12pt 'DM Sans',sans-serif">My week in feelings</div><div style="margin-top:4px;font:italic 400 14pt/1.35 'Cormorant Garamond',serif">{{ printFeel }}</div></div>
+    <span style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6);font:300 22px 'Cormorant Garamond',serif;color:#8C7550">02</span>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6)"><div style="font:500 12pt 'DM Sans',sans-serif">Funsho &amp; Wura</div><div style="display:flex;gap:28px;margin-top:4px"><sc-for list="{{ printLights }}" as="x" hint-placeholder-count="2"><span style="font:italic 400 14pt 'Cormorant Garamond',serif">{{ x.n }}: {{ x.v }}</span></sc-for></div></div>
+    <span style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6);font:300 22px 'Cormorant Garamond',serif;color:#8C7550">03</span>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6)"><div style="font:500 12pt 'DM Sans',sans-serif">Energy</div><div style="display:flex;gap:18px;margin-top:8px"><sc-for list="{{ printEnergy }}" as="e" hint-placeholder-count="7"><span style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="position:relative;display:block;width:14px;height:28px;border:1px solid #8C7550;border-radius:50% 50% 50% 50% / 64% 64% 36% 36%;overflow:hidden"><span style="{{ e.fill }}"></span></span><span style="font:400 9pt 'DM Sans',sans-serif">{{ e.day }}</span></span></sc-for></div></div>
+    <span style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6);font:300 22px 'Cormorant Garamond',serif;color:#8C7550">04</span>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6)"><div style="font:500 12pt 'DM Sans',sans-serif">Skills I reached for</div><div style="margin-top:4px;font:italic 400 14pt 'Cormorant Garamond',serif">{{ printSkills }}</div></div>
+    <span style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6);font:300 22px 'Cormorant Garamond',serif;color:#8C7550">05</span>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6)"><div style="font:500 12pt 'DM Sans',sans-serif">Hard moments</div><sc-for list="{{ printHard }}" as="x" hint-placeholder-count="1"><div style="margin-top:4px;font:italic 400 14pt/1.35 'Cormorant Garamond',serif">— {{ x.t }}</div></sc-for></div>
+    <span style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6);font:300 22px 'Cormorant Garamond',serif;color:#8C7550">06</span>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6)"><div style="font:500 12pt 'DM Sans',sans-serif">Things I want to talk about</div><sc-for list="{{ printTalk }}" as="x" hint-placeholder-count="2"><div style="margin-top:4px;font:italic 400 14pt/1.35 'Cormorant Garamond',serif">— {{ x.t }}</div></sc-for></div>
+    <span style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6);font:300 22px 'Cormorant Garamond',serif;color:#8C7550">07</span>
+    <div style="padding:14px 0;border-bottom:1px solid rgba(183,161,123,.6)"><div style="font:500 12pt 'DM Sans',sans-serif">Homework</div><sc-for list="{{ printHome }}" as="x" hint-placeholder-count="1"><div style="margin-top:4px;font:italic 400 14pt/1.35 'Cormorant Garamond',serif">{{ x.mark }} {{ x.t }}</div></sc-for></div>
+    <span style="padding:14px 0;font:300 22px 'Cormorant Garamond',serif;color:#8C7550">08</span>
+    <div style="padding:14px 0"><div style="font:500 12pt 'DM Sans',sans-serif">One thing I’m proud of</div><div style="margin-top:6px;font:italic 400 16pt/1.35 'Cormorant Garamond',serif;color:#853C50">{{ printProud }}</div></div>
+  </div>
+  <div style="margin-top:22px;border-top:1px solid #B7A17B;padding-top:10px;font:400 26px/1 'Kristi',cursive;color:#8C7550">I am the return.</div>
+</div></x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;texture&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const KEY = 'wura.v1';
+const FEEL = ['peaceful','anxious','overwhelmed','sad','angry','hurt','disconnected','exhausted','needing comfort'];
+const DEC = [
+  {q:'What happened?', h:'Just the outline. A word is enough.', chips:['at work','a message','a conversation','a memory surfaced','nothing I can name']},
+  {q:'What am I feeling?', h:'More than one can be true at once.', chips:FEEL},
+  {q:'Where do I feel it in my body?', h:'Notice it. Nothing to fix yet.', chips:['chest','throat','stomach','jaw','shoulders','hands','head','everywhere','I can’t tell']},
+  {q:'What thoughts came?', h:'Write them the way they sounded.', chips:[]},
+  {q:'Facts or story?', h:'What a camera would record, or what my mind added?', chips:['mostly facts','mostly story','some of both','not sure yet'], single:true},
+  {q:'What do I need?', h:'Needs are not too much.', chips:['rest','comfort','space','to be heard','reassurance','to move','quiet','my blanket']}
+];
+const SK = {
+  facts:{name:'Check the Facts', def:'Asking whether this feeling fits what actually happened, or the story my mind added around it.', ex:'They haven’t replied (fact). They’re done with me (story).', task:'Write only what a camera would have seen. Then one other thing that could be true.', fields:['The fact, in one sentence','What else could be true?']},
+  opposite:{name:'Opposite Action', def:'When acting on a feeling won’t help me, I do its gentle opposite, on purpose, for a little while.', ex:'The urge is to hide all evening. The opposite is one song, standing, with the window open.', task:'Name the urge, then its opposite. Small is right.', fields:['The urge','Its gentle opposite'], sound:true},
+  fast:{name:'FAST', def:'Keeping my self-respect while I speak with someone, without shrinking to make them comfortable.', ex:'“Sorry, sorry, I know this is annoying, but…” becomes “I need the file by Friday.”', task:'Write the sentence you’d usually soften with an apology. Then say it again without the sorry.', fields:['How I’d usually say it','The same thing, whole'], letters:[['F','Fair','to them, and to me'],['A','no Apologies','for asking, or for having a need'],['S','Stick to values','what I believe, said plainly'],['T','Truthful','no shrinking, no exaggerating']]},
+  dearman:{name:'DEAR MAN'}, pause:{name:'The Pause'}
+};
+const DM = [
+  {l:'D',w:'Describe',q:'What happened, only the facts?',ex:{work:'The deadline moved to Thursday without notice.',blur:'You’ve asked me to cover again this weekend.'}},
+  {l:'E',w:'Express',q:'How do I feel about it? Begin with “I”.',ex:{work:'I feel stretched when plans change suddenly.',blur:'I feel tired, and I lose myself when I always say yes.'}},
+  {l:'A',w:'Assert',q:'What am I asking for, or saying no to?',ex:{work:'I need until Monday to do this well.',blur:'I can’t this weekend.'}},
+  {l:'R',w:'Reinforce',q:'Why would this help us both?',ex:{work:'You’ll get work I can stand behind.',blur:'When I rest, I can show up as myself with you.'}}
+];
+const MAN = [['M','Mindful','Return to my ask. Repeat it softly if the talk drifts.'],['A','Appear confident','Steady voice, gold on. No need to shrink.'],['N','Negotiate','Is there a version of this we can both hold?']];
+const PQ = [
+  {q:'What am I feeling right now?', chips:FEEL},
+  {q:'What do I need underneath it?', chips:['to be understood','an apology','space','reassurance','to be taken seriously','rest']},
+  {q:'What do I want to do?', chips:['send it now','soften it','say it in person','wait until tomorrow','let it go']}
+];
+const FLOWS = {
+  diary:{name:'Diary card', back:'The Journal', steps:[
+    {k:'Feeling', q:'What did I feel today?', h:'The strongest one, or all of them.', chips:FEEL},
+    {k:'Intensity', q:'How strong was it?', h:'Words, a number, or both.', scale:['still','roaring']},
+    {k:'Urge to mask', q:'How strong was the urge to mask?', h:'To perform, to shrink, to be easier for others.', scale:['none','all day']},
+    {k:'Energy', q:'How much energy did I have?', h:'My body keeps its own weather.', scale:['empty','full']},
+    {k:'Skill', q:'What skill did I use?', h:'Rest counts as a skill.', chips:['rest','weighted blanket','brown noise','Check the Facts','Opposite Action','FAST','DEAR MAN','The Pause','grounding','none today, and that’s alright']}
+  ]},
+  mirror:{name:'The Mirror', back:'The Journal', steps:[
+    {k:'voice', q:'Write the old voice exactly as it sounds.', h:'Writing it down doesn’t mean believing it.', ph:'in its words, not mine'},
+    {k:'whose', q:'Whose voice is this?', h:'It may never have been yours.', chips:['a parent','a teacher','an old partner','a boss','the world','I’m not sure']},
+    {k:'wura', q:'What does Wura know instead?', h:'Slowly, the way you’d speak to someone you love. You might begin, “I know that…”', ph:'I know that…'}
+  ]}
+};
+const PROMPTS = ['What did my body ask for today?','Where was Wura today, even for a moment?','What am I still holding from this week?','What felt like gold today?','What do I want to say that I didn’t?'];
+const SENSES = [[5,'things I can see'],[4,'things I can touch'],[3,'things I can hear'],[2,'things I can smell'],[1,'thing I can taste']];
+const toggleSt = (on) => ({track:{flex:'none',width:40,height:22,borderRadius:999,border:'1px solid '+(on?'#B7A17B':'rgba(245,237,229,.45)'),position:'relative',boxSizing:'border-box',display:'inline-block'}, knob:{position:'absolute',top:3,left:on?21:3,width:14,height:14,borderRadius:'50%',background:on?'#B7A17B':'rgba(245,237,229,.7)'}});
+const dot = (on) => ({width:48,height:48,borderRadius:'50%',border:'1px solid '+(on?'#B7A17B':'rgba(245,237,229,.3)'),background:on?'#B7A17B':'transparent',color:on?'#1B2419':'#F5EDE5',font:'400 22px "Cormorant Garamond",serif',cursor:'pointer'});
+const today = () => new Date().toDateString();
+const FREQ = (n) => n<=1 ? 'once' : n===2 ? 'twice' : n<=4 ? 'a few times' : 'often';
+const BLOOM = ['#EBCFD0','#C58F9C','#D8C7A2','#F5EDE5','#B7A17B'];
+const petals = (n, col, size, op) => Array.from({length:n}, (_, i) => ({position:'absolute',left:'50%',top:'50%',width:size*.36,height:size*.5,marginLeft:-size*.18,marginTop:-size*.5,transformOrigin:'50% 100%',transform:'rotate('+(i*360/n)+'deg)',borderRadius:'50% 50% 50% 50% / 72% 72% 28% 28%',background:col,opacity:op||.88,boxSizing:'border-box',border:'1px solid rgba(27,36,25,.28)'}));
+const PAL = {funsho:{hi:'#EBCFD0',core:'#A9586C',deep:'#853C50',ring:'rgba(197,143,156,.75)',glow:'rgba(133,60,80,.75)'}, wura:{hi:'#FFF9F2',core:'#D8C7A2',deep:'#B7A17B',ring:'rgba(183,161,123,.85)',glow:'rgba(183,161,123,.65)'}};
+const halo = (lv, p, still) => ({
+  rings:[42,62,84].map((d, i) => ({position:'absolute',left:(84-d)/2,top:(84-d)/2,width:d,height:d,borderRadius:'50%',border:'1px solid '+p.ring,opacity:lv>i ? .95-i*.2 : .12,boxSizing:'border-box',transition:still?'none':'opacity .7s ease'})),
+  orb:{position:'absolute',left:28,top:28,width:28,height:28,borderRadius:'50%',background:'radial-gradient(circle at 34% 30%,'+p.hi+','+p.core+' 55%,'+p.deep+')',opacity:.45+lv*.18,boxShadow:lv ? '0 0 '+(6+lv*8)+'px '+(lv*2)+'px '+p.glow : 'none',transition:still?'none':'all .7s ease'}
+});
+const weekRange = () => { const d = new Date(); const mon = new Date(d.getFullYear(), d.getMonth(), d.getDate() - (d.getDay()+6)%7); const sun = new Date(mon.getFullYear(), mon.getMonth(), mon.getDate()+6);
+  const f = (x, m) => x.toLocaleDateString('en-US', m ? {month:'short', day:'numeric'} : {day:'numeric'});
+  return {mon, label: f(mon,1) + ' – ' + (mon.getMonth()===sun.getMonth() ? f(sun) : f(sun,1))}; };
+const PRES = ['quiet','here and there','present','glowing'];
+const DAYS = ['M','T','W','T','F','S','S'];
+function load(){ try{ const s = JSON.parse(localStorage.getItem(KEY)) || {}; if (s.checkDate !== today()) { s.feelings = []; s.intensity = null; } return s; } catch(e){ return {}; } }
+const hair = 'rgba(245,237,229,.18)';
+const chip = (on) => ({minHeight:44,padding:'0 18px',borderRadius:999,border:'1px solid '+(on?'#C58F9C':'rgba(245,237,229,.3)'),background:on?'rgba(133,60,80,.45)':'transparent',color:on?'#FFF9F2':'#F5EDE5',font:'400 15px "DM Sans",sans-serif',cursor:'pointer',display:'inline-flex',alignItems:'center'});
+const bar = (on, c) => ({flex:1,height:2,background:on?(c||'#B7A17B'):'rgba(245,237,229,.18)'});
+
+class Component extends DCLogic {
+  scroller = React.createRef();
+  state = Object.assign({funsho:1,wura:1,feelings:[],intensity:null,returned:null,lowTide:false,kept:[],ex:{},sound:null,
+    plan:{warning:'',grounds:'Weighted blanket. Brown noise. Oud on my wrists. Gold in my hand.',contacts:'',therapist:''},
+    dec:{step:0,a:{}}, dm:{ctx:null,step:0,a:{}}, pause:{step:0,a:{}},
+    cards:[], mirrors:[], pages:[], therapist:[], rituals:{date:null,done:[]}, carry:'', carryDate:null, noise:false, blanket:false,
+    checkins:{}, week:{feelings:[{name:'exhausted',n:4},{name:'anxious',n:3},{name:'peaceful',n:2},{name:'needing comfort',n:1}],funsho:2,wura:1,energy:[2,3,1,2,1,4,3],skills:['rest','Check the Facts','brown noise'],hard:[],homework:[{text:'Notice one moment of masking, without changing it',done:false}],proud:''}, goldBox:[], drafts:{},
+    affirm:['I am the return.','I went quiet. I did not disappear.','Forgetting is neurological, not moral.']}, load(),
+    {flow:{id:'diary',step:0,a:{}}, freeText:'', freePrompt:null, promptIdx:0, thDraft:'', afDraft:'', ground:{step:0,a:{}}}, {screen:'threshold',hold:false,skill:null,fromDec:false,skillFrom:'garden'});
+
+  componentDidUpdate(){
+    const s = this.state;
+    try { localStorage.setItem(KEY, JSON.stringify({funsho:s.funsho,wura:s.wura,feelings:s.feelings,intensity:s.intensity,returned:s.returned,lowTide:s.lowTide,kept:s.kept,ex:s.ex,sound:s.sound,plan:s.plan,dec:s.dec,dm:s.dm,pause:s.pause,cards:s.cards,mirrors:s.mirrors,pages:s.pages,therapist:s.therapist,rituals:s.rituals,carry:s.carry,carryDate:s.carryDate,noise:s.noise,blanket:s.blanket,affirm:s.affirm,week:s.week,goldBox:s.goldBox,checkins:s.checkins,checkDate:today()})); } catch(e){}
+  }
+  top(){ setTimeout(() => { if (this.scroller.current) this.scroller.current.scrollTop = 0; }, 0); }
+  go(screen, extra){ this.setState(Object.assign({screen}, extra||{})); this.top(); }
+
+  renderVals(){
+    const s = this.state, set = (o) => this.setState(o);
+    const tog = (arr, v) => arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v];
+    const low = s.lowTide;
+    const referenceArt = this.props.referenceArt ?? true;
+    const texture = (this.props.texture ?? true) && !low;
+    const LV = ['resting','a glimmer','warm','bright'];
+    const light = (key, name, sub, core, ring, glow) => {
+      const lv = s[key];
+      return { name, sub, level: LV[lv], rule: key==='wura' ? '1px solid '+hair : 'none',
+        onClick: () => set({[key]: (lv+1)%4}),
+        ...halo(lv, PAL[key], low),
+        ticks: [1,2,3].map(i => ({width:14,height:2,background:i<=lv?core:'rgba(245,237,229,.2)'})) };
+    };
+    const kept = s.kept;
+    const keepBtn = (on) => ({height:58,border:'1px solid '+(on?'#B7A17B':'rgba(245,237,229,.35)'),background:on?'rgba(183,161,123,.16)':'transparent',color:'#FFF9F2',borderRadius:999,font:'500 15px "DM Sans",sans-serif',letterSpacing:'.06em',cursor:'pointer'});
+    const toggleKept = (id) => set({kept: tog(kept, id)});
+    const openSkill = (id, from) => {
+      if (id==='dearman') return this.go('dearman', {dm:{ctx:null,step:0,a:{}}});
+      if (id==='pause') return this.go('pause', {pause:{step:0,a:{}}});
+      this.go('skill', {skill:id, fromDec:false, skillFrom:from||'garden'});
+    };
+
+    // decoder
+    const d = s.dec, dq = DEC[d.step] || DEC[0], da = d.a[d.step] || {chips:[],note:''};
+    const setDa = (p) => set({dec:{...d, a:{...d.a, [d.step]:{...da, ...p}}}});
+    const fsAns = (d.a[4]||{chips:[]}).chips[0];
+    const decSkill = fsAns==='mostly facts' ? 'opposite' : 'facts';
+    const summaryBits = [];
+    const fe = (d.a[1]||{chips:[]}).chips, bo = (d.a[2]||{chips:[]}).chips, ne = (d.a[5]||{chips:[]}).chips;
+    if (fe.length) summaryBits.push('You named ' + fe.join(', '));
+    if (bo.length) summaryBits.push('felt in your ' + bo.join(', '));
+    if (ne.length) summaryBits.push('needing ' + ne.join(', '));
+
+    // skill
+    const sk = SK[s.skill] || SK.facts;
+    const sid = s.skill || 'facts';
+
+    // dear man
+    const dm = s.dm, ctx = dm.ctx || 'work';
+    const dl = DM[dm.step-1] || DM[0];
+
+    // pause
+    const p = s.pause, pq = PQ[p.step] || PQ[0], pa = p.a[p.step] || {chips:[],note:''};
+    const setPa = (x) => set({pause:{...p, a:{...p.a, [p.step]:{...pa, ...x}}}});
+    const pv = (i) => { const a = p.a[i]||{chips:[],note:''}; return [a.chips.join(', '), a.note].filter(Boolean).join(' · ') || 'left open'; };
+
+    const NAV = [['threshold','Threshold'],['garden','Garden'],['journal','Journal'],['rose','Rose Room']];
+    const navActive = ['decoder','skill','dearman','pause'].includes(s.screen) ? 'garden' : s.screen;
+    const navActive2 = ['flow','free','therapist','past','entry'].includes(s.screen) ? 'journal' : navActive;
+    // flows (diary, mirror)
+    const fl = s.flow, F = FLOWS[fl.id], fs = F.steps[fl.step], fa = fl.a[fl.step] || {chips:[],scale:null,note:''};
+    const setFa = (x) => set({flow:{...fl, a:{...fl.a, [fl.step]:{...fa, ...x}}}});
+    const fDone = fl.step >= F.steps.length;
+    const fv = (i) => { const a = fl.a[i] || {chips:[],scale:null,note:''}; return [a.chips.join(', '), a.scale!=null ? a.scale+' of 5' : '', a.note].filter(Boolean).join(' · ') || 'left open'; };
+    const startFlow = (id) => this.go('flow', {flow:{id, step:0, a:{}}});
+    const finishFlow = () => {
+      const entry = {date: today(), a: fl.a};
+      const patch = fl.id==='diary' ? {cards:[entry, ...s.cards]} : {mirrors:[entry, ...s.mirrors]};
+      set({...patch, flow:{...fl, step:F.steps.length}}); this.top();
+    };
+    const lastCard = s.cards[0];
+    // therapist
+    const addTh = () => { const t = s.thDraft.trim(); if (t) set({therapist:[...s.therapist, {text:t, done:false}], thDraft:''}); };
+    // rose
+    const rit = s.rituals.date===today() ? s.rituals.done : [];
+    const RIT = ['Touch the gold','Wear the oud','Say “I am the return.”'];
+    const g = s.ground, gs = SENSES[g.step] || SENSES[0];
+    // weekly therapist page
+    const W = s.week, setW = (p) => set({week:{...W, ...p}}), drafts = s.drafts || {};
+    const listOf = (key, arr, save, mk) => {
+      const add = () => { const t = (drafts[key]||'').trim(); if (!t) return; save([...arr, mk ? mk(t) : t]); set({drafts:{...drafts, [key]:''}}); };
+      return {draft:drafts[key]||'', onDraft:(e) => set({drafts:{...drafts, [key]:e.target.value}}), onKey:(e) => { if (e.key==='Enter') add(); }, add,
+        items: arr.map((it, i) => ({text: typeof it==='string' ? it : it.text,
+          onRemove: () => save(arr.filter((_, j) => j!==i)),
+          onToggle: () => save(arr.map((y, j) => j===i ? {...y, done:!y.done} : y)),
+          check: {width:20,height:20,borderRadius:'50%',border:'1px solid #B7A17B',boxSizing:'border-box',background:it.done?'#B7A17B':'transparent',boxShadow:it.done?'inset 0 0 0 4px #1B2419':'none'},
+          textStyle: {flex:1,font:'italic 300 20px/1.3 "Cormorant Garamond",serif',color:it.done?'#D8C7A2':'#FFF9F2'}}))};
+    };
+    const saveCheck = (p) => { const c = {...(s.checkins||{})}; const cur = {feelings:s.feelings, intensity:s.intensity, note:'', ...(c[today()]||{}), ...p};
+      if (!cur.feelings.length && cur.intensity==null && !cur.note) delete c[today()]; else c[today()] = cur; return c; };
+    const wr = weekRange();
+    const gather = () => {
+      const cards = s.cards.filter(c => new Date(c.date) >= wr.mon);
+      const feel = {}; W.feelings.forEach(f => feel[f.name] = f.n);
+      Object.keys(s.checkins||{}).filter(d => new Date(d) >= wr.mon).forEach(d => (s.checkins[d].feelings||[]).forEach(f => feel[f] = (feel[f]||0) + 1));
+      const energy = [...W.energy]; const skills = [...W.skills];
+      cards.forEach(c => { ((c.a[0]||{}).chips||[]).forEach(f => feel[f] = (feel[f]||0) + 1);
+        const e = (c.a[3]||{}).scale; if (e != null) energy[(new Date(c.date).getDay()+6)%7] = e;
+        ((c.a[4]||{}).chips||[]).forEach(k => { if (!skills.includes(k)) skills.push(k); }); });
+      setW({feelings:Object.keys(feel).map(name => ({name, n:feel[name]})).sort((a, b) => b.n-a.n), energy, skills});
+    };
+    // past pages
+    const CK = s.checkins || {};
+    const ents = [];
+    Object.keys(CK).forEach(d => { const c = CK[d]; ents.push({kind:'checkin', id:d, date:d, type:'Check-in', tint:'#C58F9C', preview:[(c.feelings||[]).join(', '), c.intensity!=null ? 'strength '+c.intensity+' of 5' : ''].filter(Boolean).join(' · ') || 'checked in'}); });
+    s.cards.forEach((c, i) => ents.push({kind:'card', id:i, date:c.date, type:'Diary card', tint:'#B7A17B', preview:((c.a[0]||{}).chips||[]).join(', ') || (c.a[0]||{}).note || 'tonight’s card'}));
+    s.pages.forEach((p, i) => ents.push({kind:'page', id:i, date:p.date, type:'Free writing', tint:'#EBCFD0', preview:(p.text||'').split('\n')[0] || 'a page'}));
+    s.mirrors.forEach((m, i) => ents.push({kind:'mirror', id:i, date:m.date, type:'The Mirror', tint:'#D8C7A2', preview:(m.a[2]||{}).note || 'what Wura knows'}));
+    const dayKeys = [...new Set(ents.map(e => e.date))].sort((a, b) => new Date(b) - new Date(a));
+    const yest = new Date(); yest.setDate(yest.getDate()-1);
+    const dayLabel = (d) => d===today() ? 'today' : d===yest.toDateString() ? 'yesterday' : new Date(d).toLocaleDateString('en-US', {weekday:'long'}).toLowerCase();
+    const longDate = (d) => new Date(d).toLocaleDateString('en-US', {month:'long', day:'numeric', year:'numeric'});
+    const openEntry = (e) => this.go('entry', {entry:{kind:e.kind, id:e.id}, confirmDel:false});
+    const en = s.entry || {}, ta = (big) => ({display:'block',width:'100%',boxSizing:'border-box',marginTop:8,minHeight:big?200:60,background:'transparent',border:'none',borderBottom:'1px solid rgba(245,237,229,.25)',color:'#FFF9F2',font:'italic 300 21px/1.4 "Cormorant Garamond",serif',resize:'none',padding:'4px 0',outline:'none'});
+    let enFields = [], enDateKey = today(), enType = '';
+    const updArr = (key, i, fn) => set({[key]: s[key].map((x, j) => j===i ? fn(x) : x)});
+    if (en.kind==='checkin' && CK[en.id]) { const c = CK[en.id]; enDateKey = en.id; enType = 'Check-in';
+      enFields = [{label:'What was moving in me', meta:(c.feelings||[]).join(', ') || 'left open', editable:false},
+        {label:'How strong it was', meta:c.intensity!=null ? c.intensity+' of 5' : 'left open', editable:false},
+        {label:'A note', meta:'', editable:true, value:c.note||'', ph:'add a few words', onChange:(e) => set({checkins:{...CK, [en.id]:{...c, note:e.target.value}}})}];
+    } else if (en.kind==='card' && s.cards[en.id]) { const c = s.cards[en.id]; enDateKey = c.date; enType = 'Diary card';
+      enFields = FLOWS.diary.steps.map((st, i) => { const a = c.a[i] || {chips:[],scale:null,note:''};
+        return {label:st.k, meta:[(a.chips||[]).join(', '), a.scale!=null ? a.scale+' of 5' : ''].filter(Boolean).join(' · '), editable:true, value:a.note||'', ph:'in words, if you like',
+          onChange:(e) => updArr('cards', en.id, (x) => ({...x, a:{...x.a, [i]:{chips:[],scale:null, ...(x.a[i]||{}), note:e.target.value}}}))}; });
+    } else if (en.kind==='page' && s.pages[en.id]) { const p = s.pages[en.id]; enDateKey = p.date; enType = 'Free writing';
+      enFields = [{label:p.prompt || 'Without a prompt', meta:'', editable:true, big:true, value:p.text, ph:'', onChange:(e) => updArr('pages', en.id, (x) => ({...x, text:e.target.value}))}];
+    } else if (en.kind==='mirror' && s.mirrors[en.id]) { const m = s.mirrors[en.id]; enDateKey = m.date; enType = 'The Mirror';
+      const mf = (i, label, meta) => ({label, meta, editable:true, value:(m.a[i]||{}).note||'', ph:'', onChange:(e) => updArr('mirrors', en.id, (x) => ({...x, a:{...x.a, [i]:{chips:[], ...(x.a[i]||{}), note:e.target.value}}}))});
+      enFields = [mf(0,'The old voice',''), mf(1,'Whose voice', ((m.a[1]||{}).chips||[]).join(', ')), mf(2,'What Wura knows','')];
+    }
+    const doDel = () => {
+      if (en.kind==='checkin') { const c = {...CK}; delete c[en.id]; const patch = {checkins:c}; if (en.id===today()) { patch.feelings = []; patch.intensity = null; } set(patch); }
+      else { const key = {card:'cards', page:'pages', mirror:'mirrors'}[en.kind]; set({[key]: s[key].filter((_, j) => j!==en.id)}); }
+      this.go('past', {entry:null, confirmDel:false});
+    };
+    const addAf = () => { const t = s.afDraft.trim(); if (t) set({affirm:[...s.affirm, t], afDraft:''}); };
+
+    return {
+      scroller: this.scroller, referenceArt, texture, hold: s.hold,
+      frameFilter: {position:'absolute',inset:0,filter:low?'saturate(.55) brightness(.82)':'none'},
+      isThreshold: s.screen==='threshold' || low, isGarden: s.screen==='garden' && !low,
+      isDecoder: s.screen==='decoder' && !low, isSkill: s.screen==='skill' && !low,
+      isDearMan: s.screen==='dearman' && !low, isPause: s.screen==='pause' && !low,
+      showHero: !low, notLow: !low, showNav: !low && !s.hold,
+      welcomeWrap: low ? {padding:'130px 24px 0'} : {padding:'0 24px',marginTop:-86,position:'relative'},
+      lights: [light('funsho','Funsho','the one who carries','#A9586C','#5C6648','rgba(133,60,80,.9)'), light('wura','Wura','the gold beneath','#B7A17B','rgba(255,249,242,.6)','rgba(183,161,123,.55)')],
+      feelingChips: FEEL.map(f => ({label:f, style:chip(s.feelings.includes(f)), onClick:() => { const nf = tog(s.feelings,f); set({feelings:nf, checkins:saveCheck({feelings:nf})}); }})),
+      hasFeelings: s.feelings.length > 0,
+      intensityDots: [0,1,2,3,4,5].map(i => { const on = s.intensity===i; return {label:String(i), onClick:() => set({intensity:on?null:i, checkins:saveCheck({intensity:on?null:i})}),
+        style:{width:48,height:48,borderRadius:'50%',border:'1px solid '+(on?'#B7A17B':'rgba(245,237,229,.3)'),background:on?'#B7A17B':'transparent',color:on?'#1B2419':'#F5EDE5',font:'400 22px "Cormorant Garamond",serif',cursor:'pointer'}}; }),
+      showChoices: !low && s.feelings.length > 0 && s.intensity !== null,
+      startDecoder: () => this.go('decoder', {dec:{step:0, a:{1:{chips:[...s.feelings], note:''}}}}),
+      startDecoderFresh: () => this.go('decoder', {dec:{step:0, a:{1:{chips:[...s.feelings], note:''}}}}),
+      goRose: () => this.go('rose'), goGarden: () => this.go('garden'), goThreshold: () => this.go('threshold'),
+      notReturned: s.returned !== today(), hasReturned: s.returned === today(),
+      markReturned: () => set({returned: today()}), unmarkReturned: () => set({returned: null}),
+
+      othersSkills: [
+        {name:'FAST', line:'Self-respect, without over-apologising', onClick:() => openSkill('fast')},
+        {name:'DEAR MAN', line:'Rehearse what I need to say', onClick:() => openSkill('dearman')},
+        {name:'The Pause', line:'Before I send a charged message', onClick:() => openSkill('pause')}
+      ],
+      hasKept: kept.length > 0,
+      keptList: kept.map(id => ({name: SK[id].name, onClick: () => openSkill(id)})),
+
+      decNum: '/0' + (d.step+1), decQ: dq.q, decHint: dq.h,
+      decProgress: DEC.map((_, i) => bar(i <= d.step)),
+      decChips: dq.chips.map(c => ({label:c, style:chip(da.chips.includes(c)), onClick:() => setDa({chips: dq.single ? (da.chips[0]===c?[]:[c]) : tog(da.chips,c)})})),
+      decNote: da.note, onDecNote: (e) => setDa({note:e.target.value}),
+      decNextLabel: d.step < 5 ? 'Next' : 'Show me one skill',
+      decBackLabel: d.step > 0 ? 'Back' : 'The Inner Garden',
+      decBack: () => { if (d.step > 0) { set({dec:{...d, step:d.step-1}}); this.top(); } else this.go('garden'); },
+      decNext: () => { if (d.step < 5) { set({dec:{...d, step:d.step+1}}); this.top(); } else this.go('skill', {skill:decSkill, fromDec:true}); },
+
+      skKicker: s.fromDec ? 'One skill for this moment' : 'Holding myself around others',
+      decSummary: s.fromDec && summaryBits.length ? summaryBits.join(', ') + '.' : '',
+      skName: sk.name, skDef: sk.def, skEx: sk.ex, skTask: sk.task,
+      skHasLetters: !!sk.letters, skLetters: (sk.letters||[]).map(x => ({l:x[0], w:x[1], d:x[2]})),
+      skFields: (sk.fields||[]).map((f, i) => ({label:f, value:s.ex[sid+i]||'', onChange:(e) => set({ex:{...s.ex, [sid+i]:e.target.value}})})),
+      skHasSound: !!sk.sound,
+      sounds: [['funsho','Funsho’s','heavy bass','#853C50'],['wura','Wura’s','slow soul','#B7A17B']].map(o => { const on = s.sound===o[0];
+        return {who:o[1], what:o[2], onClick:() => set({sound:on?null:o[0]}), style:{minHeight:76,padding:'12px 16px',textAlign:'left',borderRadius:2,cursor:'pointer',border:'1px solid '+(on?o[3]:'rgba(245,237,229,.3)'),background:on?(o[0]==='funsho'?'rgba(133,60,80,.4)':'rgba(183,161,123,.2)'):'transparent',color:'#FFF9F2'}}; }),
+      soundLine: s.sound==='funsho' ? 'Put on the bass. Let the opposite move through the body for one song.' : s.sound==='wura' ? 'Put on the slow soul. Do the opposite softly, for one song.' : '',
+      keepLabel: kept.includes(sid) ? 'Kept in the garden' : 'Keep this skill', keepStyle: keepBtn(kept.includes(sid)),
+      toggleKeep: () => toggleKept(sid),
+      fromDec: s.fromDec, otherName: SK[sid==='facts'?'opposite':'facts'].name,
+      tryOther: () => this.go('skill', {skill: sid==='facts'?'opposite':'facts', fromDec:true}),
+      skillBack: () => this.go(s.skillFrom==='pause' ? 'pause' : 'garden'),
+
+      dmIsCtx: dm.step===0, dmIsLine: dm.step>=1 && dm.step<=4, dmIsScript: dm.step===5,
+      dmBackLabel: dm.step>0 ? 'Back' : 'The Inner Garden',
+      dmBack: () => { if (dm.step>0) { set({dm:{...dm, step:dm.step-1}}); this.top(); } else this.go('garden'); },
+      dmCtxOpts: [{title:'At work', sub:'Managers, colleagues, deadlines', k:'work'},{title:'Someone who blurs me', sub:'Where I lose my edges and say yes too fast', k:'blur'}].map(o => ({...o, onClick:() => { set({dm:{...dm, ctx:o.k, step:1}}); this.top(); }})),
+      dmProgress: DM.map((_, i) => bar(i < dm.step, '#C58F9C')),
+      dmL: dl.l, dmW: dl.w, dmQ: dl.q, dmEx: dl.ex[ctx],
+      dmVal: dm.a[dm.step-1] || '', onDm: (e) => set({dm:{...dm, a:{...dm.a, [dm.step-1]:e.target.value}}}),
+      dmNext: () => { set({dm:{...dm, step:dm.step+1}}); this.top(); },
+      dmCtxName: ctx==='work' ? 'at work' : 'with someone who blurs me',
+      dmScript: DM.map((x, i) => { const t = dm.a[i]; return {l:x.l, text: t || x.ex[ctx], style:{font:'italic 300 21px/1.35 "Cormorant Garamond",serif', color: t ? '#FFF9F2' : 'rgba(245,237,229,.55)'}}; }),
+      dmMan: MAN.map(x => ({l:x[0], w:x[1], d:x[2]})),
+      keepDmLabel: kept.includes('dearman') ? 'Kept in the garden' : 'Keep this skill', keepDmStyle: keepBtn(kept.includes('dearman')),
+      toggleKeepDm: () => toggleKept('dearman'),
+      dmRestart: () => this.go('dearman', {dm:{ctx:null,step:0,a:{}}}),
+
+      pIsQ: p.step < 3, pIsEnd: p.step === 3, pQ: pq.q,
+      pBackLabel: p.step>0 ? 'Back' : 'The Inner Garden',
+      pBack: () => { if (p.step>0) { set({pause:{...p, step:p.step-1}}); this.top(); } else this.go('garden'); },
+      pChips: pq.chips.map(c => ({label:c, style:chip(pa.chips.includes(c)), onClick:() => setPa({chips:tog(pa.chips,c)})})),
+      pNote: pa.note, onPNote: (e) => setPa({note:e.target.value}),
+      pNext: () => { set({pause:{...p, step:p.step+1}}); this.top(); },
+      pSummary: [{k:'I feel', v:pv(0)}, {k:'I need', v:pv(1)}, {k:'I want to', v:pv(2)}],
+      openFast: () => this.go('skill', {skill:'fast', fromDec:false, skillFrom:'pause'}),
+
+      isJournal: s.screen==='journal' && !low, isFlow: s.screen==='flow' && !low, isFree: s.screen==='free' && !low,
+      isPast: s.screen==='past' && !low, isEntry: s.screen==='entry' && !low, goPast: () => this.go('past', {confirmDel:false}),
+      pastEmpty: ents.length===0,
+      pastGroups: dayKeys.map(d => ({label:dayLabel(d), date:longDate(d), items: ents.filter(e => e.date===d).map(e => ({type:e.type, tint:e.tint, preview:e.preview, onClick:() => openEntry(e)}))})),
+      enType, enDay: dayLabel(enDateKey).replace(/^./, (c) => c.toUpperCase()), enDate: longDate(enDateKey),
+      enFields: enFields.map(f => ({...f, taStyle:ta(f.big)})),
+      delAsk: !s.confirmDel, delConfirm: !!s.confirmDel, askDel: () => set({confirmDel:true}), cancelDel: () => set({confirmDel:false}), doDel,
+      isTherapist: s.screen==='therapist' && !low, isRose: s.screen==='rose' && !low,
+      goJournal: () => this.go('journal'),
+      journalRows: [
+        {num:'/01', title:'Tonight’s diary card', line: lastCard ? 'Last kept ' + (lastCard.date===today() ? 'tonight' : lastCard.date.slice(4,10)) + '. Only when you ask.' : 'Feeling, masking, energy, skill. Only when you ask.', onClick:() => startFlow('diary')},
+        {num:'/02', title:'Free writing', line:'With a gentle prompt, if you want one.', onClick:() => this.go('free')},
+        {num:'/03', title:'For my therapist', line:'This week, gathered on one page.', onClick:() => this.go('therapist')},
+        {num:'/04', title:'The Mirror', line:'Answer the old voice with what Wura knows.', onClick:() => startFlow('mirror')},
+        {num:'/05', title:'Past pages', line: ents.length ? ents.length + (ents.length===1 ? ' page' : ' pages') + ' kept, day by day' : 'Everything I’ve set down, day by day.', onClick:() => this.go('past')}
+      ],
+      flowName: F.name, flowBackLabel: fl.step>0 && !fDone ? 'Back' : F.back,
+      flowBack: () => { if (fl.step>0 && !fDone) { set({flow:{...fl, step:fl.step-1}}); this.top(); } else this.go('journal'); },
+      flowProgress: F.steps.map((_, i) => bar(i <= fl.step)),
+      flowAsking: !fDone, flowDone: fDone, isDiaryDone: fDone && fl.id==='diary', isMirrorDone: fDone && fl.id==='mirror',
+      flowQ: fs ? fs.q : '', flowHint: fs ? fs.h : '', flowPh: (fs && fs.ph) || (fs && (fs.chips||fs.scale) ? 'in words, if you like' : 'a word, a note, or more'),
+      flowHasChips: !!(fs && fs.chips), flowHasScale: !!(fs && fs.scale),
+      flowChips: ((fs && fs.chips) || []).map(c => ({label:c, style:chip(fa.chips.includes(c)), onClick:() => setFa({chips:tog(fa.chips,c)})})),
+      flowDots: [0,1,2,3,4,5].map(i => ({label:String(i), style:dot(fa.scale===i), onClick:() => setFa({scale: fa.scale===i ? null : i})})),
+      flowLo: fs && fs.scale ? fs.scale[0] : '', flowHi: fs && fs.scale ? fs.scale[1] : '',
+      flowNote: fa.note, onFlowNote: (e) => setFa({note:e.target.value}),
+      flowNextLabel: fl.step < F.steps.length-1 ? 'Next' : (fl.id==='diary' ? 'Keep tonight’s card' : 'Keep this'),
+      flowNext: () => { if (fl.step < F.steps.length-1) { set({flow:{...fl, step:fl.step+1}}); this.top(); } else finishFlow(); },
+      diarySummary: FLOWS.diary.steps.map((x, i) => ({k:x.k, v:fl.id==='diary' ? fv(i) : ''})),
+      mirrorOld: (fl.a[0]||{}).note || 'left unwritten', mirrorWhose: fl.id==='mirror' ? (((fl.a[1]||{chips:[]}).chips.join(', ')) || (fl.a[1]||{}).note || 'unknown') : '',
+      mirrorWura: (fl.a[2]||{}).note || 'I am still here.',
+
+      freePrompt: s.freePrompt || '', promptLabel: s.freePrompt ? 'Another prompt' : 'Offer a gentle prompt',
+      nextPrompt: () => set({freePrompt: PROMPTS[s.promptIdx % PROMPTS.length], promptIdx: s.promptIdx+1}),
+      clearPrompt: () => set({freePrompt:null}),
+      freeText: s.freeText, onFreeText: (e) => set({freeText:e.target.value}),
+      saveFree: () => { if (s.freeText.trim()) set({pages:[{date:today(), prompt:s.freePrompt, text:s.freeText}, ...s.pages], freeText:'', freePrompt:null}); },
+      freeCount: s.pages.length ? s.pages.length + (s.pages.length===1 ? ' page kept' : ' pages kept') : '',
+
+      thDraft: s.thDraft, onThDraft: (e) => set({thDraft:e.target.value}), thKey: (e) => { if (e.key==='Enter') addTh(); }, addTh,
+      thEmpty: s.therapist.length===0,
+      thList: s.therapist.map((t, i) => ({text:t.text, btnLabel: t.done ? 'brought' : 'bring',
+        onToggle: () => set({therapist: s.therapist.map((x, j) => j===i ? {...x, done:!x.done} : x)}),
+        textStyle:{font:'italic 300 21px/1.3 "Cormorant Garamond",serif', color: t.done ? 'rgba(245,237,229,.5)' : '#FFF9F2', textDecoration: t.done ? 'line-through' : 'none'},
+        btnStyle:{flex:'none',minHeight:44,padding:'0 14px',border:'1px solid '+(t.done?'#B7A17B':'rgba(245,237,229,.3)'),background:t.done?'rgba(183,161,123,.16)':'transparent',color:'#F5EDE5',borderRadius:999,font:'400 13px "DM Sans",sans-serif',cursor:'pointer'}})),
+
+      rituals: RIT.map((label, i) => { const on = rit.includes(i); return {label,
+        onClick: () => set({rituals:{date:today(), done: tog(rit, i)}}),
+        mark:{flex:'none',width:22,height:22,borderRadius:'50%',border:'1px solid #B7A17B',background:on?'#B7A17B':'transparent',boxShadow:on?'inset 0 0 0 4px #1B2419':'none'},
+        text:{font:(i===2?'italic ':'')+'300 24px "Cormorant Garamond",serif', color: on ? '#B7A17B' : '#FFF9F2'}}; }),
+      ritualsDone: rit.length===3,
+      carry: s.carry, onCarry: (e) => set({carry:e.target.value, carryDate:null}),
+      carryDown: s.carryDate===today(), carryOpen: s.carryDate!==today(),
+      setDown: () => set({carryDate:today()}),
+      groundAsking: g.step < 5, groundDone: g.step >= 5, gNum: String(gs[0]), gSense: gs[1],
+      gVal: g.a[g.step] || '', onG: (e) => set({ground:{...g, a:{...g.a, [g.step]:e.target.value}}}),
+      gNext: () => set({ground:{...g, step:g.step+1}}), gRestart: () => set({ground:{step:0,a:{}}}),
+      cues: [
+        {title:'Brown noise', line: s.noise ? 'On. Let it hold the edges.' : 'A cue to start it on your speaker.', on:s.noise, onClick:() => set({noise:!s.noise})},
+        {title:'Weighted blanket', line: s.blanket ? 'Under the weight. Ten slow minutes.' : 'A cue to lie under the weight.', on:s.blanket, onClick:() => set({blanket:!s.blanket})}
+      ].map(c => ({...c, ...toggleSt(c.on)})),
+      weekLabel: wr.label, gather, exportPdf: () => window.print(),
+      markPetals: petals(8, '#F5EDE5', 34, 1),
+      wkFeel: W.feelings.map((f, i) => ({name:f.name, often:FREQ(f.n), petals:petals(Math.min(f.n+2, 8), BLOOM[i % BLOOM.length], 72),
+        onGrow: () => setW({feelings: W.feelings.map((y, j) => j===i ? {...y, n: y.n>=6 ? 1 : y.n+1} : y)}),
+        onRemove: () => setW({feelings: W.feelings.filter((_, j) => j!==i)})})),
+      addingFeel: !!s.addingFeel, addFeelLabel: s.addingFeel ? 'Done adding' : '+ Add a feeling', toggleAddFeel: () => set({addingFeel:!s.addingFeel}),
+      feelToAdd: FEEL.filter(f => !W.feelings.some(y => y.name===f)).map(f => ({label:f, onClick:() => setW({feelings:[...W.feelings, {name:f, n:1}]})})),
+      wkLights: [['funsho','Funsho'],['wura','Wura']].map(([k, name]) => ({name, level:PRES[W[k]], ...halo(W[k], PAL[k], low), onClick:() => setW({[k]:(W[k]+1)%4})})),
+      wkEnergy: W.energy.map((v, i) => ({day:DAYS[i], onClick:() => setW({energy:W.energy.map((y, j) => j===i ? (y+1)%6 : y)}),
+        fill:{position:'absolute',left:0,right:0,bottom:0,height:(v*20)+'%',background:'linear-gradient(180deg,#EBCFD0,#B7A17B)',opacity:.9}})),
+      wkSkills: listOf('skills', W.skills, (a) => setW({skills:a})),
+      wkHard: listOf('hard', W.hard, (a) => setW({hard:a})),
+      wkTalk: listOf('talk', s.therapist, (a) => set({therapist:a}), (t) => ({text:t, done:false})),
+      wkHome: listOf('home', W.homework, (a) => setW({homework:a}), (t) => ({text:t, done:false})),
+      proud: W.proud, onProud: (e) => setW({proud:e.target.value}),
+      hasGold: s.goldBox.length > 0, goldList: s.goldBox.map(t => ({text:t, onClick:() => setW({proud:t})})),
+      keepGoldLabel: W.proud && s.goldBox.includes(W.proud) ? 'Kept in my Gold Box' : 'Keep in my Gold Box',
+      keepGold: () => { const t = (W.proud||'').trim(); if (t && !s.goldBox.includes(t)) set({goldBox:[...s.goldBox, t]}); },
+      printFeel: W.feelings.map(f => f.name + ' (' + FREQ(f.n) + ')').join(', ') || '—',
+      printLights: [['Funsho', PRES[W.funsho]], ['Wura', PRES[W.wura]]].map(([n, v]) => ({n, v})),
+      printEnergy: W.energy.map((v, i) => ({day:DAYS[i], fill:{position:'absolute',left:0,right:0,bottom:0,height:(v*20)+'%',background:'#B7A17B'}})),
+      printSkills: W.skills.join(' · ') || '—',
+      printHard: W.hard.map(t => ({t})), printTalk: s.therapist.map(t => ({t:t.text})),
+      printHome: W.homework.map(t => ({t:t.text, mark: t.done ? '●' : '○'})), printProud: W.proud || '—',
+      affirmList: s.affirm.map((text, i) => ({text, onRemove: () => set({affirm: s.affirm.filter((_, j) => j!==i)})})),
+      afDraft: s.afDraft, onAfDraft: (e) => set({afDraft:e.target.value}), afKey: (e) => { if (e.key==='Enter') addAf(); }, addAf,
+
+      nav: NAV.map(n => { const on = navActive2===n[0]; return {label:n[1], onClick:() => this.go(n[0]),
+        style:{minHeight:46,borderRadius:999,border:'none',background:on?'#F5EDE5':'transparent',color:on?'#1B2419':'rgba(245,237,229,.8)',font:(on?'500':'400')+' 12px "DM Sans",sans-serif',letterSpacing:'.06em',cursor:'pointer'}}; }),
+
+      toggleLowTide: () => { set({lowTide:!low}); this.top(); },
+      tideTrack: {width:26,height:14,borderRadius:999,border:'1px solid '+(low?'#B7A17B':'rgba(245,237,229,.5)'),position:'relative',display:'inline-block',boxSizing:'border-box'},
+      tideKnob: {position:'absolute',top:2,left:low?14:2,width:8,height:8,borderRadius:'50%',background:low?'#B7A17B':'#F5EDE5'},
+      openHold: () => set({hold:true}), closeHold: () => set({hold:false}),
+      planFields: [['warning','Warning signs','The first small signs, in my words'],['grounds','What grounds me',''],['contacts','Trusted people','Names and numbers'],['therapist','My therapist','Name and how to reach them']].map(f => ({label:f[1], ph:f[2], value:s.plan[f[0]], onChange:(e) => set({plan:{...s.plan, [f[0]]:e.target.value}})}))
+    };
+  }
+}
+</script>
+</body>
+</html>
